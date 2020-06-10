@@ -16,24 +16,26 @@ that starts from a fresh commit history.
 This will give you the correct basic directory
 structure, etc.
 
-2. Name the new course repo `pl-ucb-` followed by the department and course number,
-e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
-
-2. Select **private** as the new repo's visibility, since PL-related
-repos will necessarily contain sensitive content (future 
-exam questions, etc.)
-
-3.  Select **ace-lab** as the destination of the new repo rather than under your personal
+2.  Select **ace-lab** as the destination of the new repo rather than under your personal
 account, so that the org's ownership and maintenance can continue 
 after your departure from Cal.
 
-4. In your new repo,  grant at least read access to the `pl-dev` team.
+3. Name the new course repo `pl-ucb-` followed by the department and course number,
+e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
+
+4. Select **private** as the new repo's visibility, since PL-related
+repos will necessarily contain sensitive content (future 
+exam questions, etc.)
+
+5. In your new repo,  grant at least read access to the `pl-dev`
+team. (Click Settings, then Manage Access.)
 Contact one of the ACELab owners 
 (your advisor, generally) if someone needs to be added to that team.
 You're also free to create teams around your specific course and add
-those teams to course repos. 
+those teams to course repos, giving `pl-dev` read-only access but
+giving your smaller team push access.
 
-5. **Important.** Just about every type of thing in PL -- course, question, element,
+6. **Important.** Just about every type of thing in PL -- course, question, element,
 etc. -- has a UUID (Universally Unique ID).  You can generate one my typing `uuidgen` at a Mac
 terminal or by using the [UUID
 generator](https://www.uuidgenerator.net).  **In your new repo,
