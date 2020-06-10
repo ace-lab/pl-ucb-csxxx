@@ -1,17 +1,26 @@
 # Example Course Repo
 
 This is an example repo for a course in PrairieLearn.  It is a
-template repo, so cloning the template actually makes a separate repo
-for you (vs. a fork of this one).
+template repo, so clicking Use This Template above will 
+[make a separate repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+for you (vs. a fork of this one) that starts from a fresh commit history.
 
 # Warning: keep repos private
 
 PL-related repos will necessarily contain sensitive content: future
-exam questions, etc.  When you create a repo, **make it private** and
+exam questions, etc.  When you create a repo for PL-related development,
+whether you create it brand-new or use this template:
+
+1. **Make it private** and
 grant at least read access to the `pl-dev` team.  Contact one of the ACELab owners
 (faculty, generally) if someone needs to be added to that team.
 You're also free to create teams around your specific course and add
 those teams to course repos.
+
+2. **Place it in the ace-lab org** rather than under your personal
+namespace, so that the org's owners (faculty) can do searches and other
+operations across course repos and so that the repo ownership will
+survive your departure from Cal.
 
 # Contribute to this documentation
 
