@@ -38,7 +38,8 @@ giving your smaller team push access.
 6. **Important.** Just about every type of thing in PL -- course, question, element,
 etc. -- has a UUID (Universally Unique ID).  You can generate one my typing `uuidgen` at a Mac
 terminal or by using the [UUID
-generator](https://www.uuidgenerator.net).  **In your new repo,
+generator](https://www.uuidgenerator.net).  For safety, in this
+template repo all UUID values have been set to "9999...".  **In your new repo,
 immediately `git rm` any files you do not need, and in the files that
 remain, replace every UUID with a fresh one.**
 

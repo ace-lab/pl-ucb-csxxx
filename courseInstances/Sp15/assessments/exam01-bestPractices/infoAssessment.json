@@ -1,5 +1,5 @@
 {
-    "uuid": "883f8167-63fe-45bb-9d78-3db4a788e166",
+    "uuid": "99999999-9999-9999-9999-999999999999",
     "type": "Exam",
     "title": "Exam Design: Best Practices",
     "set": "Exam",
@@ -12,7 +12,7 @@
         {
             "mode": "Exam",
             "credit": 100,
-            "examUuid": "edd569e8-5075-4c35-88f9-28c5feaad0cb"
+            "examUuid": "99999999-9999-9999-9999-999999999999",
        }
     ],
     "zones": [
