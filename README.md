@@ -4,21 +4,16 @@ Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to contribute knowledge.  If you're new to the project, start there
 for instructions on getting set up.
 
-# Example Course Repo
-
-This is an example repo for a course in PrairieLearn.  It is a
-template repo, so clicking Use This Template above will 
-[make a separate repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-for you (vs. a fork of this one) that starts from a fresh commit history.
-
-# To create a new course repo:
+# To create a new course repo (1 Berkeley course <=> 1 repo)
 
 A course is the platonic ideal of a class, e.g. `cs61c`.  Each course
 has exactly one repo; different offerings (instances) of the course
 are in a subdirectory of the one repo.
 
-1. Click Use This Template above to create a brand-new repo (not a
-fork) to serve as the starting point with the correct directory
+1. Click Use This Template above, which will [create a brand-new repo (not a
+fork)](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+that starts from a fresh commit history.
+This will give you the correct basic directory
 structure, etc.
 
 2. Name the new course repo `pl-ucb-` followed by the department and course number,
