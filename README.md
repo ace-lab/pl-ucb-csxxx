@@ -5,6 +5,8 @@ template repo, so clicking Use This Template above will
 [make a separate repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 for you (vs. a fork of this one) that starts from a fresh commit history.
 
+The Wiki (click above) contains more detailed information about onboarding, PL development, links to resources, etc.
+
 # Warning: keep repos private
 
 PL-related repos will necessarily contain sensitive content: future
