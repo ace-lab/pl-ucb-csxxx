@@ -16,7 +16,7 @@ that starts from a fresh commit history.
 This will give you the correct basic directory
 structure, etc.
 
-2.  Select **ace-lab** as the destination of the new repo rather than under your personal
+2. Select **ace-lab** as the destination of the new repo rather than under your personal
 account, so that the org's ownership and maintenance can continue 
 after your departure from Cal.
 
@@ -67,6 +67,3 @@ like a collection of questions) of that course instance.  The most
 important file inside an assessment is the `.json` file that actually
 contains the details of the assessment (which questions, grading
 policy, etc.)
-
-
-
