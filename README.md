@@ -4,7 +4,7 @@ Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to contribute knowledge.  If you're new to the project, start there
 for instructions on getting set up.
 
-# To create a new course repo (1 Berkeley course <=> 1 repo)
+## To create a new course repo (1 Berkeley course <=> 1 repo)
 
 A course is the platonic ideal of a class, e.g. `cs61c`.  Each course
 has exactly one repo; different offerings (instances) of the course
@@ -17,8 +17,8 @@ This will give you the correct basic directory
 structure, etc.
 
 2. Select **ace-lab** as the destination of the new repo rather than under your personal
-account, so that the org's ownership and maintenance can continue 
-after your departure from Cal.
+account.  **If you do not do this, your course repo will not
+be able to be published to the CBT servers.**
 
 3. Name the new course repo `pl-ucb-` followed by the department and course number,
 e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
@@ -43,7 +43,7 @@ template repo all UUID values have been set to "9999...".  **In your new repo,
 immediately `git rm` any files you do not need, and in the files that
 remain, replace every UUID with a fresh one.**
 
-# Repo structure
+## Repo structure
 
 Within a course repo,
 `courseInstances/` should contain subdirectories for each offering of
@@ -67,3 +67,55 @@ like a collection of questions) of that course instance.  The most
 important file inside an assessment is the `.json` file that actually
 contains the details of the assessment (which questions, grading
 policy, etc.)
+
+## Tagging conventions - PLEASE READ
+
+The top-level `infoCourse.json` of this repo defines a few "global" tags that
+all questions should have.  This will help curation of questions in the future,
+so please *follow these guidelines* when adding tags to each question's `info.json`.
+
+ALL tags should be lowercase for consistency throughout the course.
+Some tags are defined for you.
+
+### Required Tags
+
+1. Type of assessment:
+   - formative (HW or non-graded level)
+   - summative (Exam level)
+2. Stage of completion:
+   - alpha (question is ready for TA review)
+   - beta (question is ready for instructor to review)
+   - release (instructor has blessed the question and can now be released to students)
+3. Difficulty of the question relative to class pace:
+   - easy
+   - medium
+   - hard
+4. Answer format tag: (tag multiple for multiple elements)
+   - radio --> single select multiple choice
+   - checkbox --> multiple select multiple choice
+   - blank --> input box (string, integer, symbol, ect.)
+   - code (The answer format is a piece of code.)
+     - CS10 has changed this tag to 'dead python' for specificity
+   - dropdown
+   - matrix
+   - drawing (The answer format requires drawing on a canvas to input a graphical representation of an answer.)
+5. Author name (ex: dgarcia for Dan Garcia). All developers should define their author tag inside `infoCourse.json`
+6. Conceptual v Numerical variants (ex: 4v20)
+   - Conceptual variants are the number of times the prompt changes in a QG
+   - Numerical variants are the number of times the values in a question change.
+   - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v20"
+   - These should not be defined in `infoCourse.json` and only tagged in `info.json`.
+
+### Optional Tags
+
+1. Type of exam question: (These may vary by course, Ex: midterm2)
+   - quiz
+   - midterm
+   - final
+   - Developers should define these for their course in `infoCourse.json`
+2. Semester the question was written in and the question number (Ex: Fa18Q6 or Sp20Q10)
+   - Usually the 'type of exam' tag goes hand in hand with this one.
+   - These should not be defined in `infoCourse.json` and only tagged in `info.json`.
+3. Any subtopics not covered in the Topics section of `infoCourse.json` should be defined here as well.
+
+NOTE: Any tags not defined in `infoCourse.json` but tagged in `info.json` will default to the gray1 color.
