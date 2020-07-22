@@ -17,8 +17,8 @@ This will give you the correct basic directory
 structure, etc.
 
 2.  Select **ace-lab** as the destination of the new repo rather than under your personal
-account, so that the org's ownership and maintenance can continue 
-after your departure from Cal.
+account.  **If you do not do this, your course repo will not
+be able to be published to the CBT servers.**
 
 3. Name the new course repo `pl-ucb-` followed by the department and course number,
 e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
@@ -67,6 +67,14 @@ like a collection of questions) of that course instance.  The most
 important file inside an assessment is the `.json` file that actually
 contains the details of the assessment (which questions, grading
 policy, etc.)
+
+# Tagging conventions - PLEASE READ
+
+The top-level `infoCourse.json` of this repo defines a few "global" tags that
+all questions should have.  This will help curation of questions in the future,
+so please *follow these guidelines* when adding tags to each question's `info.json`.
+
+[Irene to describe required and recommended tags here]
 
 
 
