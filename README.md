@@ -74,8 +74,8 @@ The top-level `infoCourse.json` of this repo defines a few "global" tags that
 all questions should have.  This will help curation of questions in the future,
 so please *follow these guidelines* when adding tags to each question's `info.json`.
 
-ALL tags should be lowercase for consistency throughout the course.
-Some tags are defined for you.
+ALL tags should be lowercase for consistency throughout the course repo.
+Some tags are defined for you on `infoCourse.json`.
 
 ### Required Tags
 
