@@ -1,6 +1,6 @@
 # Contribute to this documentation
 
-Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki) 
+Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to contribute knowledge.  If you're new to the project, start there
 for instructions on getting set up.
 
@@ -24,12 +24,11 @@ be able to be published to the CBT servers.**
 e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
 
 4. Select **private** as the new repo's visibility, since PL-related
-repos will necessarily contain sensitive content (future 
-exam questions, etc.)
+repos will necessarily contain sensitive content (future exam questions, etc.)
 
 5. In your new repo,  grant at least read access to the `pl-dev`
 team. (Click Settings, then Manage Access.)
-Contact one of the ACELab owners 
+Contact one of the ACELab owners
 (your advisor, generally) if someone needs to be added to that team.
 You're also free to create teams around your specific course and add
 those teams to course repos, giving `pl-dev` read-only access but
@@ -82,15 +81,11 @@ Some tags are defined for you on `infoCourse.json`.
 1. Type of assessment:
    - formative (HW or non-graded level)
    - summative (Exam level)
-2. Stage of completion:
-   - alpha (question is ready for TA review)
-   - beta (question is ready for instructor to review)
-   - release (instructor has blessed the question and can now be released to students)
-3. Difficulty of the question relative to class pace:
+2. Difficulty of the question relative to class pace:
    - easy
    - medium
    - hard
-4. Answer format tag: (tag multiple for multiple elements)
+3. Answer format tag: (tag multiple for multiple elements)
    - radio --> single select multiple choice
    - checkbox --> multiple select multiple choice
    - blank --> input box (string, integer, symbol, ect.)
@@ -99,12 +94,16 @@ Some tags are defined for you on `infoCourse.json`.
    - dropdown
    - matrix
    - drawing (The answer format requires drawing on a canvas to input a graphical representation of an answer.)
+4. Stage of completion:
+   - alpha (question is ready for TA review)
+   - beta (question is ready for instructor to review)
+   - release (instructor has blessed the question and can now be released to students)
 5. Author name (ex: dgarcia for Dan Garcia). All developers should define their author tag inside `infoCourse.json`
 6. Conceptual v Numerical variants (ex: 4v20)
    - Conceptual variants are the number of times the prompt changes in a QG
    - Numerical variants are the number of times the values in a question change.
    - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v20"
-   - These should not be defined in `infoCourse.json` and only tagged in `info.json`.
+   - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
 
 ### Optional Tags
 
@@ -113,9 +112,9 @@ Some tags are defined for you on `infoCourse.json`.
    - midterm
    - final
    - Developers should define these for their course in `infoCourse.json`
-2. Semester the question was written in and the question number (Ex: Fa18Q6 or Sp20Q10)
-   - Usually the 'type of exam' tag goes hand in hand with this one.
-   - These should not be defined in `infoCourse.json` and only tagged in `info.json`.
-3. Any subtopics not covered in the Topics section of `infoCourse.json` should be defined here as well.
+2. Semester the original question was written in and the question number (Ex: Fa18Q6 or Sp20Q10)
+   - Usually the 'type of exam' tag goes hand in hand with this tag.
+   - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
+3. Any subtopics not covered in the Topics section of `infoCourse.json` should be defined on `infoCourse.json` under tags.
 
-NOTE: Any tags not defined in `infoCourse.json` but tagged in `info.json` will default to the gray1 color.
+NOTE: Any tags not defined in `infoCourse.json` but tagged in each question's `info.json` will default to the gray1 color on Prairielearn.
