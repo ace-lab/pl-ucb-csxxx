@@ -23,26 +23,26 @@
     ],
     "tags": [
         {"name": "formative", "color": "brown2", "description": "HW and lab questions"},
-        {"name": "summative", "color": "brown3", "description": "Quest, Midterm, and Final Questions"},
-        
-        {"name": "alpha", "color": "red1", "description": "Status: Template version."},
-        {"name": "beta", "color": "red2", "description": "Status: Nearing completeness."},
-        {"name": "release", "color": "red3", "description": "Status: QG is complete."},
+        {"name": "summative", "color": "brown3", "description": "Quiz, Midterm, and Final Questions"},
+
+        {"name": "quiz", "color": "pink1", "description": "Exam level."},
+        {"name": "midterm", "color": "pink2", "description": "Exam level."},
+        {"name": "final", "color": "pink3", "description": "Exam level."},
         
         {"name": "easy", "color": "blue1", "description": "Difficulty."},
         {"name": "medium", "color": "blue2", "description": "Difficulty."},
         {"name": "hard", "color": "blue3", "description": "Difficulty."},
         
         {"name": "blank", "color": "orange2", "description": "Element: input for number, integer, string, symbol, ect."},
-        {"name": "dead python", "color": "orange2", "description": "Element: Dead python."},
+        {"name": "code", "color": "orange2", "description": "Element: Dead python."},
         {"name": "radio", "color": "orange3", "description": "Element: Single select multiple choice."},
         {"name": "checkbox", "color": "purple3", "description": "Element: Multiple select multiple choice."},
         {"name": "matrix", "color": "purple1", "description": "Element: Matrix component or matrix input."},
         {"name": "drop-down", "color": "purple2", "description": "Element: Drop-down select menu list."},
 
-        {"name": "quest", "color": "pink1", "description": "Exam level."},
-        {"name": "midterm", "color": "pink2", "description": "Exam level."},
-        {"name": "final", "color": "pink3", "description": "Exam level."},
+        {"name": "alpha", "color": "green1", "description": "Question is ready for TA review."},
+        {"name": "beta", "color": "green2", "description": "Question is ready for instructor to review."},
+        {"name": "release", "color": "green3", "description": "Instructor has blessed the question and can now be released to students."},
 
         {"name": "dgarcia", "color": "brown1", "description": "This question was originally written by Dan Garia (ddgarcia@berkeley.edu) Github: ddgarcia"}
     ]
