@@ -22,21 +22,28 @@
         {"name": "Statistics", "color": "blue2", "description": "Probability distributions."}
     ],
     "tags": [
-        {"name": "mwest", "color": "gray1", "description": "Question originally written by mwest"},
-        {"name": "tbretl", "color": "blue1", "description": "Question originally written by tbretl"},
-        {"name": "mfsilva", "color": "blue1", "description": "Question originally written by mfsilva"},
-        {"name": "balamut2", "color": "orange1", "description": "Question originally written by balamut2"},
-        {"name": "ressick2", "color": "gray1", "description": "Question originally written by ressick2"},
-        {"name": "eliving2", "color": "gray1", "description": "Question originally written by eliving2"},
-        {"name": "nwalter2", "color": "pink1", "description": "Question originally written by nwalter2"},
-        {"name": "tpl101", "color": "gray1", "description": "Question originally written for the XC 101 example course"},
-        {"name": "fa17", "color": "gray1", "description": "Question written in Fall 2017"},
-        {"name": "sp18", "color": "gray1", "description": "Question written in Spring 2018"},
-        {"name": "su18", "color": "gray1", "description": "Question written in Summer 2018"},
-        {"name": "fa18", "color": "gray1", "description": "Question written in Fall 2018"},
-        {"name": "v2", "color": "red1", "description": "v2 generation question"},
-        {"name": "v3", "color": "green1", "description": "v3 generation question (freeform)"},
-        {"name": "pearl", "color": "yellow3", "description": "Question originally written by pearl"},
-        {"name": "rstats", "color": "blue2", "description": "Question requires the use of R"}
+        {"name": "formative", "color": "brown2", "description": "HW and lab questions"},
+        {"name": "summative", "color": "brown3", "description": "Quiz, Midterm, and Final Questions"},
+
+        {"name": "quiz", "color": "pink1", "description": "Exam level."},
+        {"name": "midterm", "color": "pink2", "description": "Exam level."},
+        {"name": "final", "color": "pink3", "description": "Exam level."},
+        
+        {"name": "easy", "color": "blue1", "description": "Difficulty."},
+        {"name": "medium", "color": "blue2", "description": "Difficulty."},
+        {"name": "hard", "color": "blue3", "description": "Difficulty."},
+        
+        {"name": "blank", "color": "orange2", "description": "Element: input for number, integer, string, symbol, ect."},
+        {"name": "code", "color": "orange2", "description": "Element: Dead python."},
+        {"name": "radio", "color": "orange3", "description": "Element: Single select multiple choice."},
+        {"name": "checkbox", "color": "purple3", "description": "Element: Multiple select multiple choice."},
+        {"name": "matrix", "color": "purple1", "description": "Element: Matrix component or matrix input."},
+        {"name": "drop-down", "color": "purple2", "description": "Element: Drop-down select menu list."},
+
+        {"name": "alpha", "color": "green1", "description": "Question is ready for TA review."},
+        {"name": "beta", "color": "green2", "description": "Question is ready for instructor to review."},
+        {"name": "release", "color": "green3", "description": "Instructor has blessed the question and can now be released to students."},
+
+        {"name": "ddgarcia", "color": "brown1", "description": "This question was originally written by Dan Garcia (ddgarcia@berkeley.edu)"}
     ]
 }
