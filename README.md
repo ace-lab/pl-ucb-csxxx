@@ -90,7 +90,7 @@ Some tags are defined for you on `infoCourse.json`.
    - checkbox --> multiple select multiple choice
    - blank --> input box (string, integer, symbol, ect.)
    - code (The answer format is a piece of code.)
-     - CS10 has changed this tag to 'dead python' for specificity
+     - CS10 has changed this tag to 'dead python' for specificity. Feel free to change it accordingly.
    - dropdown
    - matrix
    - drawing (The answer format requires drawing on a canvas to input a graphical representation of an answer.)
@@ -98,11 +98,14 @@ Some tags are defined for you on `infoCourse.json`.
    - alpha (question is ready for TA review)
    - beta (question is ready for instructor to review)
    - release (instructor has blessed the question and can now be released to students)
-5. Author name (ex: dgarcia for Dan Garcia). All developers should define their author tag inside `infoCourse.json`
-6. Conceptual v Numerical variants (ex: 4v20)
-   - Conceptual variants are the number of times the prompt changes in a QG
+5. Author name as Github username:
+   - All developers should define their author tag inside `infoCourse.json`
+   - Under description, add your Berkeley or personal email in the case that your Berkeley email gets deleted or contributer is not part of UC Berkeley.
+   - CS10 uses first initial and last name (Ex: dgarcia for Dan Garcia) with all other identifying components in the description.
+6. Conceptual v Numerical variants: (ex: 4v20)
+   - Conceptual variants are the number of times the prompt changes in a QG.
    - Numerical variants are the number of times the values in a question change.
-   - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v20"
+   - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v20".
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
 
 ### Optional Tags
@@ -112,7 +115,7 @@ Some tags are defined for you on `infoCourse.json`.
    - midterm
    - final
    - Developers should define these for their course in `infoCourse.json`
-2. Semester the original question was written in and the question number (Ex: Fa18Q6 or Sp20Q10)
+2. Semester the original question was written in and the question number: (Ex: Fa18Q6 or Sp20Q10)
    - Usually the 'type of exam' tag goes hand in hand with this tag.
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
 3. Any subtopics not covered in the Topics section of `infoCourse.json` should be defined on `infoCourse.json` under tags.
