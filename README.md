@@ -69,18 +69,33 @@ policy, etc.)
 
 ## Tagging conventions - PLEASE READ
 
-The top-level `infoCourse.json` of this repo defines a few "global" tags that
-all questions should have.  This will help curation of questions in the future,
-so please *follow these guidelines* when adding tags to each question's `info.json`.
+The top-level `infoCourse.json` of this repo defines a few "global" tags that all questions should have to add an extra layer of filtering and identification. This will help curation of questions in the future, so please *follow these guidelines* when adding tags to each question's `info.json`. 
 
-ALL tags should be lowercase for consistency throughout the course repo.
-Some tags are defined for you on `infoCourse.json`.
+- You are encouraged to add your own tag definitions and use [PL's 30 colors](https://prairielearn.readthedocs.io/en/latest/course/#colors) on the top-level `infoCourse.json` of this repo. Some tags are defined for you as a guide. 
+
+- ALL tags should be lowercase for consistency throughout the course repo.
+
 
 ### Required Tags
 
 1. Type of assessment:
-   - formative (HW or non-graded level)
-   - summative (Exam level)
+   - formative (Practice level, public)
+   - summative (Exam level, secret)
+
+2. Author name as Github username:
+   - All developers should define their author tag inside `infoCourse.json`
+   - Under description, add your institution's or personal email in the case that your institution's email gets deleted or contributer is not part of an institution.
+
+3. University or institution:
+   - Use your institution's approved naming conventions as per policy.
+
+### Recommended Tags
+
+1. Type of exam question: (These may vary by course, Ex: midterm2)
+   - quiz
+   - midterm
+   - final
+   - Developers should define these for their course in `infoCourse.json`
 2. Difficulty of the question relative to class pace:
    - easy
    - medium
@@ -97,27 +112,15 @@ Some tags are defined for you on `infoCourse.json`.
 4. Stage of completion:
    - alpha (question is ready for TA review)
    - beta (question is ready for instructor to review)
-   - release (instructor has blessed the question and can now be released to students)
-5. Author name as Github username:
-   - All developers should define their author tag inside `infoCourse.json`
-   - Under description, add your Berkeley or personal email in the case that your Berkeley email gets deleted or contributer is not part of UC Berkeley.
-   - CS10 uses first initial and last name (Ex: dgarcia for Dan Garcia) with all other identifying components in the description.
-6. Conceptual v Numerical variants: (ex: 4v20)
+   - release (instructor has blessed the question and can now be released to students)`'/
+5. Any subtopics n]ot covered in the Topics section ojf `infoCourse.json` should be defined on `infoCourse.json` under tags.
+6. Conceptual v Numerical variants: (ex: 4v5)
    - Conceptual variants are the number of times the prompt changes in a QG.
-   - Numerical variants are the number of times the values in a question change.
-   - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v20".
+   - Numerical variants are the number of times the values or other parameters in a question change.
+   - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v5".
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
-
-### Optional Tags
-
-1. Type of exam question: (These may vary by course, Ex: midterm2)
-   - quiz
-   - midterm
-   - final
-   - Developers should define these for their course in `infoCourse.json`
-2. Semester the original question was written in and the question number: (Ex: Fa18Q6 or Sp20Q10)
+7. Semester the original question was written in and the question number: (Ex: Fa18Q6 or Sp20Q10)
    - Usually the 'type of exam' tag goes hand in hand with this tag.
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
-3. Any subtopics not covered in the Topics section of `infoCourse.json` should be defined on `infoCourse.json` under tags.
 
 NOTE: Any tags not defined in `infoCourse.json` but tagged in each question's `info.json` will default to the gray1 color on Prairielearn.
