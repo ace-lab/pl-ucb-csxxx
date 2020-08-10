@@ -1,4 +1,9 @@
-# Contribute to this documentation
+# Welcome!  New here?
+
+We require that everyone doing PL development at Berkeley (and if you can see this, that's you) include their
+**real name and a reasonable photo** in their GitHub profile.  Some of the repos you'll have access to
+contain sensitive stuff, e.g. exam questions, so we need to know who you are, especially if your real identity
+is not obvious from your GitHub username.  **Please take a moment now to add your real name and photo to your GitHub profile.**
 
 Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to contribute knowledge.  If you're new to the project, start there
