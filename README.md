@@ -71,10 +71,9 @@ policy, etc.)
 
 The top-level `infoCourse.json` of this repo defines a few "global" tags that all questions should have to add an extra layer of filtering and identification. This will help curation of questions in the future, so please *follow these guidelines* when adding tags to each question's `info.json`. 
 
-- You are encouraged to add your own tag definitions and use [PL's 30 colors](https://prairielearn.readthedocs.io/en/latest/course/#colors) on the top-level `infoCourse.json` of this repo. Some tags are defined for you as a guide. 
+- You are encouraged to add your own tag definitions and use [PL's 30 colors](https://prairielearn.readthedocs.io/en/latest/course/#colors) on the top-level `infoCourse.json` of this repo. Some tags are defined for you as a guide.
 
 - ALL tags should be lowercase for consistency throughout the course repo.
-
 
 ### Required Tags
 
@@ -88,6 +87,7 @@ The top-level `infoCourse.json` of this repo defines a few "global" tags that al
 
 3. University or institution:
    - Use your institution's approved naming conventions as per policy.
+   - For UC Berkeley, the correct tag name is 'berkeley'.
 
 ### Recommended Tags
 
@@ -113,13 +113,13 @@ The top-level `infoCourse.json` of this repo defines a few "global" tags that al
    - alpha (question is ready for TA review)
    - beta (question is ready for instructor to review)
    - release (instructor has blessed the question and can now be released to students)`'/
-5. Any subtopics n]ot covered in the Topics section ojf `infoCourse.json` should be defined on `infoCourse.json` under tags.
+5. Any subtopics not covered in the Topics section ojf `infoCourse.json` should be defined on `infoCourse.json` under tags.
 6. Conceptual v Numerical variants: (ex: 4v5)
    - Conceptual variants are the number of times the prompt changes in a QG.
    - Numerical variants are the number of times the values or other parameters in a question change.
    - If every conceptual variant has 5 numerical variants and we have 4 conceptual variants, we get "4v5".
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
-7. Semester the original question was written in and the question number: (Ex: Fa18Q6 or Sp20Q10)
+7. Semester the original question was written in and the question number: (Ex: Fa18Q6 or Sp20Q10 or Su20)
    - Usually the 'type of exam' tag goes hand in hand with this tag.
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
 
