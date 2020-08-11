@@ -44,6 +44,8 @@
         {"name": "beta", "color": "green2", "description": "Question is ready for instructor to review."},
         {"name": "release", "color": "green3", "description": "Instructor has blessed the question and can now be released to students."},
 
-        {"name": "ddgarcia", "color": "brown1", "description": "This question was originally written by Dan Garcia (ddgarcia@berkeley.edu)"}
+        {"name": "ddgarcia", "color": "brown1", "description": "This question was originally written by Dan Garcia (ddgarcia@berkeley.edu)"},
+
+        {"name": "institution", "color": "brown1", "description": "Intellectual property owned by the Institution"}
     ]
 }
