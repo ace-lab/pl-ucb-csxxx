@@ -9,7 +9,7 @@ Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to contribute knowledge.  If you're new to the project, start there
 for instructions on getting set up.
 
-## To create a new course repo (1 Berkeley course <=> 1 repo)
+## To create a new course repo (1 university course <=> 1 repo)
 
 A course is the platonic ideal of a class, e.g. `cs61c`.  Each course
 has exactly one repo; different offerings (instances) of the course
@@ -25,19 +25,20 @@ structure, etc.
 account.  **If you do not do this, your course repo will not
 be able to be published to the CBT servers.**
 
-3. Name the new course repo `pl-ucb-` followed by the department and course number,
+3. Name the new course repo `pl-` followed by the university abbreviation (`ucb`, `csulb`, `ecc`)
+followed by department and course number,
 e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
 
 4. Select **private** as the new repo's visibility, since PL-related
 repos will necessarily contain sensitive content (future exam questions, etc.)
 
-5. In your new repo,  grant at least read access to the `pl-dev`
-team. (Click Settings, then Manage Access.)
-Contact one of the ACELab owners
-(your advisor, generally) if someone needs to be added to that team.
-You're also free to create teams around your specific course and add
-those teams to course repos, giving `pl-dev` read-only access but
-giving your smaller team push access.
+5. Create a new team `pl-dev-`_university_`-`_course_, e.g. `pl-dev-ucb-cs10` and 
+grant that team **read and write** access on your repo.  Add all instructors and student
+developers for the course to that team.  If you don't have the privileges to do this
+in the org, ask one of the org's owners.
+
+5.  Also, you must grant the teams `cbt-DEV-machines` and `cbt-PROD-machines` **read only** access
+to your course repo, in order that the courses can be served from Berkeley's PL servers.
 
 6. **Important.** Just about every type of thing in PL -- course, question, element,
 etc. -- has a UUID (Universally Unique ID).  You can generate one my typing `uuidgen` at a Mac
@@ -57,10 +58,10 @@ the course, beginning with Fa,Sp,or Su plus a 2-digit year, eg Fa20.
 used by any instance of the course.  Question subdirs should have names that
 describe the content/topic of the question, **not** how it is used.
 E.g. good question name: "html-css-simple-1".  Bad name:
-"Exam1Question4".  In this template repo, the `questions` directory is empty, but
-take a look at the
+"Exam1Question4".  This template repo contains some interesting questions
+developed for some of our courses.  The
 [pl-example-questions](https://github.com/ace-lab/pl-example-questions)
-repo for lots of examples of question generators.
+repo also has lots of examples of question generators.
 
 Question subdirs can be nested, so (e.g.) if you have a whole bunch of
 QGs that address roughly the same topic, you can group them.
