@@ -1,51 +1,154 @@
 {
-    "uuid": "99999999-9999-9999-9999-999999999999",
-    "name": "XC 101",
-    "title": "Example Course",
-    "options": {
-        "useNewQuestionRenderer": true
+  "uuid": "99999999-9999-9999-9999-999999999999",
+  "name": "XC 101",
+  "title": "Example Course",
+  "options": {
+    "useNewQuestionRenderer": true
+  },
+  "assessmentSets": [],
+  "topics": [
+    {
+      "name": "Template",
+      "color": "orange2",
+      "description": "Templates to copy as the start for a new question."
     },
-    "assessmentSets": [],
-    "topics": [
-        {"name": "Template", "color": "orange2", "description": "Templates to copy as the start for a new question."},
-        {"name": "Algebra", "color": "red3", "description": "Basic algebra."},
-        {"name": "Calculus", "color": "yellow3", "description": "Single and multiple variable calculus."},
-        {"name": "Vectors", "color": "blue3", "description": "Vector algebra in 3D."},
-        {"name": "Functions", "color": "pink3", "description": "Writing and calling functions in code."},
-        {"name": "Energy", "color": "purple3", "description": "Mechanical energy; kinetic and potential."},
-        {"name": "Particle kinetics", "color": "red3", "description": "Newton's equation for point masses."},
-        {"name": "Coding", "color": "turquoise3", "description": "Writing computer code."},
-        {"name": "Center of mass", "color": "green3", "description": "Calculating the center of mass for irregular bodies and systems."},
-        {"name": "Linear algebra", "color": "brown3", "description": "Matrix math."},
-        {"name": "Test", "color": "gray3", "description": "Feature examples."},
-        {"name": "Names", "color": "red2", "description": "Questions to help you learn names."},
-        {"name": "Statistics", "color": "blue2", "description": "Probability distributions."}
-    ],
-    "tags": [
-        {"name": "formative", "color": "brown2", "description": "HW and lab questions"},
-        {"name": "summative", "color": "brown3", "description": "Quiz, Midterm, and Final Questions"},
+    { "name": "Algebra", "color": "red3", "description": "Basic algebra." },
+    {
+      "name": "Calculus",
+      "color": "yellow3",
+      "description": "Single and multiple variable calculus."
+    },
+    {
+      "name": "Vectors",
+      "color": "blue3",
+      "description": "Vector algebra in 3D."
+    },
+    {
+      "name": "Functions",
+      "color": "pink3",
+      "description": "Writing and calling functions in code."
+    },
+    {
+      "name": "Energy",
+      "color": "purple3",
+      "description": "Mechanical energy; kinetic and potential."
+    },
+    {
+      "name": "Particle kinetics",
+      "color": "red3",
+      "description": "Newton's equation for point masses."
+    },
+    {
+      "name": "Coding",
+      "color": "turquoise3",
+      "description": "Writing computer code."
+    },
+    {
+      "name": "Center of mass",
+      "color": "green3",
+      "description": "Calculating the center of mass for irregular bodies and systems."
+    },
+    {
+      "name": "Linear algebra",
+      "color": "brown3",
+      "description": "Matrix math."
+    },
+    { "name": "Test", "color": "gray3", "description": "Feature examples." },
+    {
+      "name": "Names",
+      "color": "red2",
+      "description": "Questions to help you learn names."
+    },
+    {
+      "name": "Statistics",
+      "color": "blue2",
+      "description": "Probability distributions."
+    }
+  ],
+  "tags": [
+    {
+      "name": "formative",
+      "color": "brown2",
+      "description": "HW and lab questions",
+      "assessment": true
+    },
+    {
+      "name": "summative",
+      "color": "brown3",
+      "description": "Quiz, Midterm, and Final Questions",
+      "assessment": true
+    },
 
-        {"name": "quiz", "color": "pink1", "description": "Exam level."},
-        {"name": "midterm", "color": "pink2", "description": "Exam level."},
-        {"name": "final", "color": "pink3", "description": "Exam level."},
-        
-        {"name": "easy", "color": "blue1", "description": "Difficulty."},
-        {"name": "medium", "color": "blue2", "description": "Difficulty."},
-        {"name": "hard", "color": "blue3", "description": "Difficulty."},
-        
-        {"name": "blank", "color": "orange2", "description": "Element: input for number, integer, string, symbol, ect."},
-        {"name": "code", "color": "orange2", "description": "Element: Dead python."},
-        {"name": "radio", "color": "orange3", "description": "Element: Single select multiple choice."},
-        {"name": "checkbox", "color": "purple3", "description": "Element: Multiple select multiple choice."},
-        {"name": "matrix", "color": "purple1", "description": "Element: Matrix component or matrix input."},
-        {"name": "drop-down", "color": "purple2", "description": "Element: Drop-down select menu list."},
+    { "name": "quiz", "color": "pink1", "description": "Exam level." },
+    { "name": "midterm", "color": "pink2", "description": "Exam level." },
+    { "name": "final", "color": "pink3", "description": "Exam level." },
 
-        {"name": "alpha", "color": "green1", "description": "Question is ready for TA review."},
-        {"name": "beta", "color": "green2", "description": "Question is ready for instructor to review."},
-        {"name": "release", "color": "green3", "description": "Instructor has blessed the question and can now be released to students."},
+    { "name": "easy", "color": "blue1", "description": "Difficulty." },
+    { "name": "medium", "color": "blue2", "description": "Difficulty." },
+    { "name": "hard", "color": "blue3", "description": "Difficulty." },
 
-        {"name": "ddgarcia", "color": "brown1", "description": "This question was originally written by Dan Garcia (ddgarcia@berkeley.edu)"},
-        
-        {"name": "berkeley", "color": "blue3", "description": "Intellectual property owned by the University of California, Berkeley"}
-    ]
+    {
+      "name": "blank",
+      "color": "orange2",
+      "description": "Element: input for number, integer, string, symbol, ect."
+    },
+    {
+      "name": "code",
+      "color": "orange2",
+      "description": "Element: Dead python."
+    },
+    {
+      "name": "radio",
+      "color": "orange3",
+      "description": "Element: Single select multiple choice."
+    },
+    {
+      "name": "checkbox",
+      "color": "purple3",
+      "description": "Element: Multiple select multiple choice."
+    },
+    {
+      "name": "matrix",
+      "color": "purple1",
+      "description": "Element: Matrix component or matrix input."
+    },
+    {
+      "name": "drop-down",
+      "color": "purple2",
+      "description": "Element: Drop-down select menu list."
+    },
+
+    {
+      "name": "alpha",
+      "color": "green1",
+      "description": "Question is ready for TA review.",
+      "status": true
+    },
+    {
+      "name": "beta",
+      "color": "green2",
+      "description": "Question is ready for instructor to review.",
+      "status": true
+    },
+    {
+      "name": "release",
+      "color": "green3",
+      "description": "Instructor has blessed the question and can now be released to students.",
+      "status": true
+    },
+
+    {
+      "name": "ddgarcia",
+      "color": "brown1",
+      "description": "This question was originally written by Dan Garcia (ddgarcia@berkeley.edu)",
+      "author": true
+    },
+
+    {
+      "name": "berkeley",
+      "color": "blue3",
+      "description": "Intellectual property owned by the University of California, Berkeley",
+      "institution": true
+    }
+  ]
 }
