@@ -3,7 +3,7 @@
 info_json_files=$(git diff --staged HEAD --diff-filter=d --name-only -- 'questions*info.json')
 if [ -n "$info_json_files" ]
 then
-    python3 info_json_check.py --inputs "$info_json_files"
+    python3 info_json_check.py --inputs $info_json_files
 else
     echo "No files need to be checked!"
 fi
