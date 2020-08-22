@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Script to validate all info.jsons
+python3 validation_workflow/info_json_check.py --all

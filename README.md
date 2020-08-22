@@ -93,15 +93,15 @@ To enforce adherence to these required tags, we have a few tools in place. There
 
 2. It runs a python script, `info_json_check.py`. This script does the validation on all created and modified `info.json` files in the qusetions directory. You never need to run this file yourself. I have provided bash scripts that handle the various types of arguments you would pass in. If this script catches errors in the json files, it will throw an error and prevent you from committing code until all fixes are made.
 
-In order to add this pre-commit hook, you must run `bash copy-hooks` to copy the pre-commit hook script into your local git hooks directory. This also copies a `post-merge` that automatically updates your hooks everytime someone pushes changes to them.
+In order to add this pre-commit hook, you must run `bash validation_workflow/copy-hooks` to copy the pre-commit hook script into your local git hooks directory. This also copies a `post-merge` that automatically updates your hooks everytime someone pushes changes to them.
 
 In short, after you clone the repo run the following commands:
-- `bash copy-hooks`
+- `bash validation_workflow/copy-hooks`
 - `pip install isort black`
 
 In addition to these local requirements, there is also a github action workflow that runs the same validations command and will throw the error in the checks section of your PR.
 
-If have already have several questions and don't know if they all meet the standards outlined here, you can run `bash validate_all` and all existing `info.json`s will be checked for validity.
+If have already have several questions and don't know if they all meet the standards outlined here, you can run `bash validation_workflow/validate_all` and all existing `info.json`s will be checked for validity.
 
 Below we have a list of recommended tags. If you want to make any of those tags required for your course there are 3 steps you need to take:
 

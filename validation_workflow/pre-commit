@@ -8,4 +8,4 @@ then
   git add $py_files
 fi
 
-bash validate_changed_files
+bash validation_workflow/validate_changed_files

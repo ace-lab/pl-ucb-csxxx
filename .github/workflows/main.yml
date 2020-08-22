@@ -30,4 +30,4 @@ jobs:
         VALIDATE_ALL_CODEBASE: false # Validate only changed files. (TODO: Remove after remediations.)
     
     - name: Validate-Info-JSONs
-      run: bash validate_changed_files
+      run: bash validation_workflow/validate_changed_files
