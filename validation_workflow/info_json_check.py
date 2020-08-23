@@ -1,7 +1,7 @@
 import argparse
 import json
 import sys
-from os import walk
+from os import path, walk
 
 
 class bcolors:
@@ -38,8 +38,8 @@ def validate_all(errors):
         for filename in filenames:
             if filename == "info.json":
                 # build absolute path to each info.json
-                path = f"{dirpath}\\{filename}"
-                validate_input(path, errors)
+                file_path = path.join(dirpath, filename)
+                validate_input(file_path, errors)
 
 
 def validate_input(input, errors):

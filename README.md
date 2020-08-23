@@ -89,7 +89,7 @@ The top-level `infoCourse.json` of this repo defines a few "global" tags that al
 
 To enforce adherence to these required tags, we have a few tools in place. There is a pre-commit hook script, `pre-commit`, that does two things:
 
-1. It enforces `isort` and `black` formatting. So you must run `pip install isort black` in order to use it. If you are against the use of `isort` and/or `black`, feel free to remove the usage, but I highly recommend it.
+1. It enforces `isort` and `black` formatting. So you must run `pip install isort black` or `pip3 install isort black` in order to use it. If you are against the use of `isort` and/or `black`, feel free to remove the usage, but I highly recommend it.
 
 2. It runs a python script, `info_json_check.py`. This script does the validation on all created and modified `info.json` files in the qusetions directory. You never need to run this file yourself. I have provided bash scripts that handle the various types of arguments you would pass in. If this script catches errors in the json files, it will throw an error and prevent you from committing code until all fixes are made.
 
@@ -97,7 +97,7 @@ In order to add this pre-commit hook, you must run `bash validation_workflow/cop
 
 In short, after you clone the repo run the following commands:
 - `bash validation_workflow/copy-hooks`
-- `pip install isort black`
+- `pip install isort black` or `pip3 install isort black`
 
 In addition to these local requirements, there is also a github action workflow that runs the same validations command and will throw the error in the checks section of your PR.
 
