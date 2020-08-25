@@ -5,9 +5,9 @@ if [ -n "$info_json_files" ]
 then
     if [[ "$OSTYPE" =~ ^msys ]]
     then
-        python info_json_check.py --inputs $info_json_files
+        python validation_workflow/info_json_check.py --inputs $info_json_files
     else
-        python3 info_json_check.py --inputs $info_json_files
+        python3 validation_workflow/info_json_check.py --inputs $info_json_files
     fi
 else
     echo "No files need to be checked!"
