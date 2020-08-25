@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Script to validate all info.jsons
+if [[ "$OSTYPE" =~ ^msys ]]
+then
+    python validation_workflow/info_json_check.py --all
+else
+    python3 validation_workflow/info_json_check.py --all
+fi

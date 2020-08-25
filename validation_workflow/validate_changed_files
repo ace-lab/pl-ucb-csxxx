@@ -1,0 +1,14 @@
+#!/bin/bash
+
+info_json_files=$(git diff --staged HEAD --diff-filter=d --name-only -- 'questions*info.json')
+if [ -n "$info_json_files" ]
+then
+    if [[ "$OSTYPE" =~ ^msys ]]
+    then
+        python validation_workflow/info_json_check.py --inputs $info_json_files
+    else
+        python3 validation_workflow/info_json_check.py --inputs $info_json_files
+    fi
+else
+    echo "No files need to be checked!"
+fi

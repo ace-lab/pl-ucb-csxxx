@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Script to copy hooks to hidden hooks directory
+cp validation_workflow/pre-commit .git/hooks/pre-commit
+chmod 755 .git/hooks/pre-commit
+
+cp validation_workflow/post-merge .git/hooks/post-merge
+chmod 755 .git/hooks/post-merge

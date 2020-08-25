@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# git hook to update local pre-commit hook if source control pre-commit changes
+
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check_run() {
+	echo "$changed_files" | grep --quiet "$1" && eval "$2"
+}
+
+check_run validation_workflow/pre-commit "bash validation_workflow/copy-hooks"
+check_run validation_workflow/post-merge "bash validation_workflow/copy-hooks"

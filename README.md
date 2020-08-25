@@ -29,24 +29,14 @@ be able to be published to the CBT servers.**
 followed by department and course number,
 e.g. `pl-ucb-cs61a`, `pl-ucb-ee120`, etc.  
 
-4. Select **private** as the new repo's visibility, since PL-related
-repos will necessarily contain sensitive content (future exam questions, etc.)
+4. Select **private** as the new repo's visibility, since PL-related repos will necessarily contain sensitive content (future exam questions, etc.)
 
-5. Create a new team `pl-dev-`_university_`-`_course_, e.g. `pl-dev-ucb-cs10` and 
-grant that team **read and write** access on your repo.  Add all instructors and student
-developers for the course to that team.  If you don't have the privileges to do this
-in the org, ask one of the org's owners.
+5. Create a new team `pl-dev-`_university_`-`_course_, e.g. `pl-dev-ucb-cs10` and grant that team **read and write** access on your repo. Add all instructors and student
+developers for the course to that team. If you don't have the privileges to do this in the org, ask one of the org's owners.
 
-5.  Also, you must grant the teams `cbt-DEV-machines` and `cbt-PROD-machines` **read only** access
-to your course repo, in order that the courses can be served from Berkeley's PL servers.
+5. Also, you must grant the teams `cbt-DEV-machines` and `cbt-PROD-machines` **read only** access to your course repo, in order that the courses can be served from Berkeley's PL servers.
 
-6. **Important.** Just about every type of thing in PL -- course, question, element,
-etc. -- has a UUID (Universally Unique ID).  You can generate one my typing `uuidgen` at a Mac
-terminal or by using the [UUID
-generator](https://www.uuidgenerator.net).  For safety, in this
-template repo all UUID values have been set to "9999...".  **In your new repo,
-immediately `git rm` any files you do not need, and in the files that
-remain, replace every UUID with a fresh one.**
+6. **Important.** Just about every type of thing in PL -- course, question, element, etc. -- has a UUID (Universally Unique ID).  You can generate one my typing `uuidgen` at a Mac terminal or by using the [UUID generator](https://www.uuidgenerator.net). For safety, in this template repo all UUID values have been set to "9999...".  **In your new repo, immediately `git rm` any files you do not need, and in the files that remain, replace every UUID with a fresh one.**
 
 ## Repo structure
 
@@ -75,7 +65,7 @@ policy, etc.)
 
 ## Tagging conventions - PLEASE READ
 
-The top-level `infoCourse.json` of this repo defines a few "global" tags that all questions should have to add an extra layer of filtering and identification. This will help curation of questions in the future, so please *follow these guidelines* when adding tags to each question's `info.json`. 
+The top-level `infoCourse.json` of this repo defines a few "global" tags that all questions should have to add an extra layer of filtering and identification. This will help curation of questions in the future, so please *follow these guidelines* when adding tags to each question's `info.json`.
 
 - You are encouraged to add your own tag definitions and use [PL's 30 colors](https://prairielearn.readthedocs.io/en/latest/course/#colors) on the top-level `infoCourse.json` of this repo. Some tags are defined for you as a guide.
 
@@ -94,6 +84,42 @@ The top-level `infoCourse.json` of this repo defines a few "global" tags that al
 3. University or institution:
    - Use your institution's approved naming conventions as per policy.
    - For UC Berkeley, the correct tag name is 'berkeley'.
+
+### Automatic Validation
+
+To enforce adherence to these required tags, we have a few tools in place. There is a pre-commit hook script, `pre-commit`, that does two things:
+
+1. It enforces `isort` and `black` formatting. So you must run `pip install isort black` or `pip3 install isort black` in order to use it. If you are against the use of `isort` and/or `black`, feel free to remove the usage (by ed), but I highly recommend it.
+
+2. It runs a python script, `info_json_check.py`. This script does the validation on all created and modified `info.json` files in the qusetions directory. You never need to run this file yourself. I have provided bash scripts that handle the various types of arguments you would pass in. If this script catches errors in the json files, it will throw an error and prevent you from committing code until all fixes are made.
+
+In order to add this pre-commit hook, you must run `bash validation_workflow/copy-hooks` to copy the pre-commit hook script into your local git hooks directory. This also copies a `post-merge` that automatically updates your hooks everytime someone pushes changes to them. If you want to view the contents of the actual hooks you are currently using, you can find them at `.git/hooks/`. This is a hidden directory that exists outside the source control.
+
+In short, after you clone the repo run the following commands:
+- `bash validation_workflow/copy-hooks`
+- `pip install isort black` or `pip3 install isort black`
+
+In addition to these local requirements, there is also a github action workflow that runs the same validations command and will throw the error in the checks section of your PR.
+
+If have already have several questions and don't know if they all meet the standards outlined here, you can run `bash validation_workflow/validate_all` and all existing `info.json`s will be checked for validity. You should run this every time you create a new required tag.
+
+Below we have a list of recommended tags. If you want to make any of those tags required for your course there are 3 steps you need to take:
+
+1. For each of those categories, define a name. For example, the first category, you can call it `exam_question_type`.
+
+2. In `infoCourse.json`, whenever you create a tag that falls under that category, add an additional field that is named the same. So for our `exam_question_type` example, in `infoCourse.json`, if I want a new required tag under this category, I would add the following:
+
+```json
+{
+   "name": "quiz",
+   "color": "brown3",
+   "description": "quiz question",
+   "exam_question_type": true
+}
+```
+Specifying `exam_question_type` to `true` will tell the validation flow that the `quiz` tag belongs to `exam_question_type` category.
+
+3. Lastly, in `info_json_check.py`, on line 24 you can find the `fields` variable. This is a list of all the categories of required tags. Simply add any category to this list. So, for our running example, I would simply add "exam_question_type".
 
 ### Recommended Tags
 

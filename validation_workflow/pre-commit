@@ -1,0 +1,11 @@
+#!/bin/bash
+
+py_files=$(git diff --staged HEAD --diff-filter=d --name-only -- '*.py')
+if [ ! -z "$py_files" ]
+then
+  isort $py_files
+  black $py_files
+  git add $py_files
+fi
+
+bash validation_workflow/validate_changed_files
