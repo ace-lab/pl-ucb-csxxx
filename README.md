@@ -156,3 +156,27 @@ Specifying `exam_question_type` to `true` will tell the validation flow that the
    - These should not be defined in `infoCourse.json` and only tagged in each question's `info.json`.
 
 NOTE: Any tags not defined in `infoCourse.json` but tagged in each question's `info.json` will default to the gray1 color on Prairielearn.
+
+## Question Generator Template
+
+The top-level `template.py` of this repo runs a program that creates all necessary subdirectories and files for a new question generator (with some template code to get you started).
+Your question's PATH will already be under the `questions` directory, so no need to include that.
+
+```bash
+python3 template.py <PATH>
+```
+
+1. Use PrairieLearn's QUID format for paths:
+
+   - Ex: `python/list/append-extend`
+
+     - The last directory specified (Ex: append-extend) will contain the following files and directories:
+
+       1. info.json
+       2. question.html
+       3. server.py
+       4. README.md
+       5. clientFilesQuestion (dir)
+       6. serverFilesQuestion (dir)
+
+NOTE: To avoid PL errors, DO NOT use any spaces or special symbols other than `-` in your path.
