@@ -1,5 +1,6 @@
 import sys
 import os
+import uuid
 
 """
 Run this script with PATH to create all files and subfolders for a new QG.
@@ -14,6 +15,9 @@ def question_template(quid):
         os.chdir('questions')
     for folder in quid:
         if os.path.isdir(folder):
+            if folder == quid[-1]:
+                print("QUID already exists.")
+                return 0
             os.chdir(folder)
         else:
             os.mkdir(folder)
@@ -33,14 +37,15 @@ def generate(data):
     question.write("""<pl-question-panel>
 </pl-question-panel>
 """)
+    new_uuid = str(uuid.uuid1())
     info.write("""{
-    "uuid": "REPLACE",
+    "uuid": "%s",
     "title": "",
     "topic": "",
     "tags": ["berkeley"],
     "type": "v3"
 }
-""")
+""" % (new_uuid))
     readme.write("""# Title
 > Description
 ## Table of Contents
@@ -55,8 +60,8 @@ def main():
     split_dir = sys.argv[1].split("/")
     if '' in split_dir:
         sys.exit("Not a valid path")
-    question_template(split_dir)
-    print("Your question's QUID is: " + sys.argv[1])
+    if question_template(split_dir) != 0: 
+        print("Your question's QUID is: " + sys.argv[1])
 
 if __name__ == "__main__":
     main()
