@@ -36,8 +36,6 @@ Once you have your repo established, you should immediately do the following:
 
 A partial manifest of contributions to PL itself in this repo:
 
-* `elements/pl-faded-parsons`: an element for creating Faded Parsons
-Problems, contributed by @nathanielweinman, @armandofox,
-@JackBoreczky.  See its readme for usage details.
-`questions/faded-parsons` has some example questions that use it.
-
+| What                        | Status | Description                                                                                                                           | Authors (contact author first)                |
+|-----------------------------+--------+---------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------|
+| `elements/pl-faded-parsons` | In dev | An element for creating Faded Parsons Problems. See its readme for usage details and `questions/faded-parsons` for example questions. | @armandofox, @nathanielweinman, @JackBoreczky |
