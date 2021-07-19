@@ -1,12 +1,43 @@
 # Welcome!  New here?
 
-We require that everyone doing PL development at Berkeley (and if you can see this, that's you) include their
-**real name and a reasonable photo** in both their GitHub profile and the Slack channel to which you should have received an email invite.  
-Some of the repos you'll have access to
-contain sensitive stuff, e.g. exam questions, so we need to know who you are, especially if your real identity
-is not obvious from your GitHub username.  **Please take a moment now to add your real name and photo to your GitHub and Slack profiles.**
+If you're new, please use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
+to get started!
 
-Use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
-to contribute knowledge.  If you're new to the project, [start there](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
-for instructions on getting set up.
+# Using this repo as a template to make a new course?
+
+If you are using this repo as a template to make your own course
+(highly recommended), your course repo's name should be `pl-SSS-CCC`, 
+where `SSS` is your project
+institution name (`ucb`, `csulb`, `ecc`) and `CCC` is the lowercase course
+number at your institution (eg `pl-ucb-cs169a`, `pl-ecc-csci8`, etc).
+    
+Once you have your repo established, you should immediately do the following:
+
+    * Create a team that is a child of `pl-dev` and is named
+    `pl-dev-SSS-CCC` (like the repo name; eg for `pl-ucb-cs169`, the
+    team name should be `pl-dev-ucb-cs169`) that has Read/Write access
+    to your repo, and add the course staff to it
+    
+    * Delete the `elements` subdirectory, unless you specifically want to use
+    the custom elements in here (see below for some documentation)
+    
+    * Delete the contents of `serverFilesCourse` and `clientFilesCourse`
+    
+    * Delete the contents of `courseInstances` (you'll add your own
+    later)
+    
+    * Delete the contents of `questions/`, which will be replaced with
+    your course's questions
+    
+    * Immediately update this `README.md` and `infoCourse.json` to
+    reflect the info for your course
+    
+# Cool stuff in this repo
+
+A partial manifest of contributions to PL itself in this repo:
+
+* `elements/pl-faded-parsons`: an element for creating Faded Parsons
+Problems, contributed by @nathanielweinman, @armandofox,
+@JackBoreczky.  See its readme for usage details.
+`questions/faded-parsons` has some example questions that use it.
 
