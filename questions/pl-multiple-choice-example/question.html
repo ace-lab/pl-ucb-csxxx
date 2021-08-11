@@ -1,0 +1,17 @@
+<pl-question-panel>
+    Here is the demo of the pl-multiple-choice element with hints.
+</pl-question-panel>
+<pl-multiple-choice answers-name="answer" hide-letter-keys="true">
+    <pl-answer hint="Correct!" correct="true">I am correct.</pl-answer>
+    <pl-answer hint="My inserted value is: {{params.inserted_value}}">My hint uses mustache templating, as defined in server.py</pl-answer>
+    <pl-answer hint="Here's some code: &lt;code>print(&quot;Hello World!&quot;)&lt;code>">My hint uses an HTML tag.</pl-answer>
+    <pl-answer hint="According to Wikipedia: &quot;Responsive web design (RWD) is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes from minimum to maximum display size. Recent work also considers the viewer proximity as part of the viewing context as an extension for RWD. Content, design and performance are necessary across all devices to ensure usability and satisfaction.&lt;br>
+    &lt;br>
+    A site designed with RWD adapts the layout to the viewing environment by using fluid, proportion-based grids, flexible images, and CSS3 media queries, an extension of the @media rule, in the following ways:&lt;br>
+    &lt;br>
+    The fluid grid concept calls for page element sizing to be in relative units like percentages, rather than absolute units like pixels or points.
+    Flexible images are also sized in relative units, so as to prevent them from displaying outside their containing element.
+    Media queries allow the page to use different CSS style rules based on characteristics of the device the site is being displayed on, e.g. width of the rendering surface (browser window width or a physical display size).
+    Responsive layouts automatically adjust and adapt to any device screen size, whether it is a desktop, a laptop, a tablet, or a mobile phone.
+    Responsive web design has become more important as the amount of mobile device user has come to account for more than half of total internet traffic. In 2015, for instance, Google announced Mobilegeddon and started to boost the ratings of mobile-friendly sites if the search was made from a mobile device. Responsive web design is an example of user interface plasticity.&quot;">To test for responsive web design, my hint is very long.</pl-answer>
+</pl-multiple-choice>
