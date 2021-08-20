@@ -16,7 +16,7 @@ Unfortunately, there was not enough time to create the DocStrings for the UML Mo
 The file can be found here.
 
 ## Usage question.html
-You can use the UML elements in a question like so: https://github.com/ace-lab/pl-csulb-cecs323/blob/8a49be2e9d3e063f30b687582c0718e3f9223965/questions/drawing-tutorials/snapping-2/question.html#L10-L36
+You can use the UML elements in a question like so: https://github.com/ace-lab/pl-ucb-csxxx/blob/631de1fdbe2b6651af502aeb8681f0192fd6a3d7/questions/drawing-tutorials/snapping-2/question.html#L10-L36
 
 Here are the attributes that can be assigned in the css for each element:
 
