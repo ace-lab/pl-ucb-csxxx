@@ -1,0 +1,9 @@
+{
+    "controller": "constraint.py",
+    "dependencies": {
+        "extensionScripts": [
+            "constraint.js",
+            "constraint-static.js"
+        ]
+    }
+}

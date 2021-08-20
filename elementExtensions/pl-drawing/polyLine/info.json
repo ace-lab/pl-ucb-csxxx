@@ -1,0 +1,16 @@
+{
+    "controller": "poly_line.py",
+    "dependencies": {
+        "extensionScripts": [
+            "poly-line.js", 
+            "poly-line-helper.js",
+            "poly-line-movement-handlers.js",
+            "poly-line-shapes.js",
+            "poly-line-snapping.js",
+            "poly-line-static.js"
+        ],
+        "clientFilesCourseScripts": [
+            "canvasHelper.js"
+        ]
+    }
+} 

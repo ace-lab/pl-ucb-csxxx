@@ -1,0 +1,6 @@
+{
+    "controller": "uml_text.py",
+    "dependencies": {
+        "extensionScripts": ["uml-text.js"]
+    }
+}

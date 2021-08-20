@@ -1,0 +1,9 @@
+{
+    "controller": "uml_class.py",
+    "dependencies": {
+        "extensionScripts": [
+            "uml-class.js",
+            "static-uml-class.js"
+        ]
+    }
+}
