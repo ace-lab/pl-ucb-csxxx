@@ -13,7 +13,7 @@ Once the submitted data is parsed, you will have a UML Model object which can be
 You can find the docs for the Python element classes [here](https://github.com/ace-lab/pl-csulb-cecs323/blob/drawing-elements-dev/serverFilesCourse/docs/uml_element_classes.py.md).
 
 Unfortunately, there was not enough time to create the DocStrings for the UML Model class, but it is a relatively easy class to understand.
-The file can be found here.
+The file can be found [here](https://github.com/ace-lab/pl-ucb-csxxx/blob/uml-drawing-elements/serverFilesCourse/customElements/UMLclasses/model.py).
 
 ## Usage question.html
 You can use the UML elements in a question like so: https://github.com/ace-lab/pl-ucb-csxxx/blob/631de1fdbe2b6651af502aeb8681f0192fd6a3d7/questions/drawing-tutorials/snapping-2/question.html#L10-L36
