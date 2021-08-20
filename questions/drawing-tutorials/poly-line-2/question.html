@@ -1,0 +1,30 @@
+<pl-question-panel>
+    <p> Add 1 aggregation line, 1 dependency line, and 1 association line.</p>
+</pl-question-panel>
+
+<pl-drawing answers-name="uml_model" gradable="true" hide-answer-panel="true" width="650" height="400" grid-size="20" >
+    <pl-drawing-initial>
+    </pl-drawing-initial>
+   <pl-drawing-answer></pl-drawing-answer>
+    <pl-controls>
+
+        <pl-controls-group label="Lines" >
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="association" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="inheritance" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="realization" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="dependency" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="aggregation" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="composition" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" grid-size="20"></pl-drawing-button>
+        </pl-controls-group>
+
+         <pl-controls-group label="Other">
+            <pl-drawing-button type="delete" init-element-count='3'></pl-drawing-button>
+            <pl-drawing-button type="help-line"></pl-drawing-button>
+        </pl-controls-group>
+
+    </pl-controls>
+
+</pl-drawing>
+<pl-submission-panel>
+</pl-submission-panel>

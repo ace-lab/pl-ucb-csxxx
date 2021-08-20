@@ -1,0 +1,38 @@
+<pl-question-panel>
+    <p>
+        Add a line from "Order" to "Product". Then add constraints of "0..*" and "1..*" respectively.
+    </p>
+    <p>
+        You can snap a line by placing a line on the canvas, then drag the endpoints near the object you want to snap to. You can snap a constraint on to a line by dragging it near an endpoint.
+    </p>
+</pl-question-panel>
+
+<pl-drawing answers-name="uml_model" gradable="true" hide-answer-panel="true" width="640" height="400" grid-size="20" >
+    <pl-drawing-initial>
+        <pl-uml-class class-name="Order" top="220" left="40" grid-size="20" class-name-editable="false"></pl-uml-class>
+        <pl-uml-class class-name="Product" top="60" left="400" grid-size="20" class-name-editable="false"></pl-uml-class>
+    </pl-drawing-initial>
+   <pl-drawing-answer></pl-drawing-answer>
+
+    <pl-controls>
+        <pl-controls-group label="Line" >
+            <pl-drawing-button type="pl-poly-line" grid-size="20"></pl-drawing-button>
+        </pl-controls-group>
+
+        <pl-controls-group label="Constraints">
+            <pl-drawing-button type="pl-constraint" constraint-type="1..1" coordinates="[200, 200]"></pl-drawing-button>
+            <pl-drawing-button type="pl-constraint" constraint-type="1..*" coordinates="[200, 200]"></pl-drawing-button>
+            <pl-drawing-button type="pl-constraint" constraint-type="0..1" coordinates="[200, 200]"></pl-drawing-button>
+            <pl-drawing-button type="pl-constraint" constraint-type="0..*" coordinates="[200, 200]"></pl-drawing-button>
+        </pl-controls-group>
+        
+        <pl-controls-group label="Other">
+            <pl-drawing-button type="delete" init-element-count='3'></pl-drawing-button>
+            <pl-drawing-button type="help-line"></pl-drawing-button>
+        </pl-controls-group>
+    </pl-controls>
+
+
+</pl-drawing>
+<pl-submission-panel>
+</pl-submission-panel>

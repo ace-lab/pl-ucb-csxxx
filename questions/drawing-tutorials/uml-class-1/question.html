@@ -1,0 +1,26 @@
+<pl-question-panel>
+    <p>Create a single UML class and rename it.</p>
+    <p>You can rename the UML class by double clicking the name while it is highlighted.</p>
+</pl-question-panel>
+
+<pl-drawing answers-name="uml_model" gradable="true" hide-answer-panel="true" width="650" height="400" grid-size="20" >
+    <pl-drawing-initial>
+    </pl-drawing-initial>
+   <pl-drawing-answer></pl-drawing-answer>
+
+    <pl-controls>
+
+        <pl-controls-group label="Uml Class" >
+            <pl-drawing-button type="pl-uml-class" class-name="Enter text" grid-size="20" class-name-editable="true"></pl-uml-class>
+        </pl-controls-group>
+
+        <pl-controls-group label="Other">
+            <pl-drawing-button type="delete" init-element-count='3'></pl-drawing-button>
+            <pl-drawing-button type="help-line"></pl-drawing-button>
+        </pl-controls-group>
+
+    </pl-controls>
+
+</pl-drawing>
+<pl-submission-panel>
+</pl-submission-panel>

@@ -1,0 +1,31 @@
+<pl-question-panel>
+    <p>
+        Snap a dependancy line from "Student" to "Person".
+    </p>
+    <p>
+        You can snap a line by placing a line on the canvas, then drag the endpoints near the object you want to snap to.
+    </p>
+</pl-question-panel>
+
+<pl-drawing answers-name="uml_model" gradable="true" hide-answer-panel="true" width="640" height="400" grid-size="20" >
+    <pl-drawing-initial>
+        <pl-uml-class class-name="Student" top="220" left="40" grid-size="20" class-name-editable="false"></pl-uml-class>
+        <pl-uml-class class-name="Person" top="60" left="400" grid-size="20" class-name-editable="false"></pl-uml-class>
+    </pl-drawing-initial>
+   <pl-drawing-answer></pl-drawing-answer>
+
+    <pl-controls>
+        <pl-controls-group label="Lines" >
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="association" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="inheritance" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="realization" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="dependency" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="aggregation" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" uml-line-type="composition" grid-size="20"></pl-drawing-button>
+            <pl-drawing-button type="pl-poly-line" dashed="true" grid-size="20"></pl-drawing-button>
+         </pl-controls-group>
+    </pl-controls>
+
+</pl-drawing>
+<pl-submission-panel>
+</pl-submission-panel>
