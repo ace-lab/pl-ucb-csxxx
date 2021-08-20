@@ -586,6 +586,8 @@ UmlClass.renderUmlText = function (umlClass) {
   const textInUml = []
   const attribHeight = umlClass.umlTextFont * 1.6
 
+  upperRect.height = className.height + 10
+
   // Reset the height for both attributes
   lowerInnerRect.height = upperRect.height
   outerRect.height = lowerInnerRect.height + attribHeight
@@ -616,8 +618,8 @@ UmlClass.renderUmlText = function (umlClass) {
   })
 
   if (umlClass.attributes.length < 1) {
-    outerRect.height += attribHeight
-    lowerInnerRect.height += attribHeight
+    outerRect.height += attribHeight * 1.8
+    lowerInnerRect.height += attribHeight * 1.8
   }
 
   const methodHeight = umlClass.umlTextFont * 1.6
@@ -646,7 +648,7 @@ UmlClass.renderUmlText = function (umlClass) {
   })
 
   if (umlClass.methods.length < 1) {
-    outerRect.height += methodHeight
+    outerRect.height += umlClass.height * 0.90
   }
 
   // Add them all back with update
