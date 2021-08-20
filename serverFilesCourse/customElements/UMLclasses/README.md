@@ -2,7 +2,7 @@
 The UML drawing elements are custom elements made on top of FabricJS and PL's drawing API. The main feature in the UML elements is the ability to snap and unsnap elements from eachother. After submission of a canvas, the snap data of the elements are sent back to `server.py` as a dict object.
 
 ## Tutorials
-There are a few tutorials that are designed for the programmer and a student. The student can learn to use controls, and the programmer can learn to grade a question.
+There are a few tutorials that are designed for the programmer and a student. The student can learn to use controls, and the programmer can learn to grade a question. They can be found [here](https://github.com/ace-lab/pl-ucb-csxxx/tree/uml-drawing-elements/questions/drawing-tutorials)
 
 ## Parsing
 There is a parser provided which turn the raw submitted data into element Python objects. The parser has the ability to compile these objects into a UML Model object. You do not need to use the parser, but it is recommended. If you decide to make your own parser, you can find the useful raw data that is submitted by the student here.
