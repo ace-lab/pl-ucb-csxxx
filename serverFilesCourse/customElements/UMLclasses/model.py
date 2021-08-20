@@ -1,4 +1,4 @@
-from uml_element_classes import *
+from customElements.UMLclasses.uml_element_classes import *
 
 class Model:
     """Represents a UML model.
