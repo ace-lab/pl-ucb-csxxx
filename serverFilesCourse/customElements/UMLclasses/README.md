@@ -26,5 +26,6 @@ Use the tutorials as a guide for grading. Each tutorial will cover a different t
 
 ## Things left to do
 To make for a better user experience, the line button svg files should change according to the uml line type. This can be done here: 
+https://github.com/ace-lab/pl-ucb-csxxx/blob/7af36443a80dd0b936d137e1c1cee852c7a153be/elementExtensions/pl-drawing/polyLine/poly-line.js#L44-L50
 
 the uml line type can be accessed using `options.umlLineType`
