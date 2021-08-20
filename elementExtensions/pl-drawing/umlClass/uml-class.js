@@ -63,6 +63,10 @@ class UmlClass extends PLDrawingBaseElement {
     // Add to the object to the canvas
     canvas.add(umlClass)
   }
+
+  static get_button_icon(options) {
+    return 'uml-class.svg'
+  }
 };
 
 /**
@@ -690,6 +694,6 @@ UmlClass.getUmlClassById = function (umlClassId) {
 }
 
 // Register the element with PL
-PLDrawingApi.registerElements('UmlClass', {
+PLDrawingApi.registerElements('umlClass', {
   'pl-uml-class': UmlClass
 })
