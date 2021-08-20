@@ -5,7 +5,7 @@ The UML drawing elements are custom elements made on top of FabricJS and PL's dr
 There are a few tutorials that are designed for the programmer and a student. The student can learn to use controls, and the programmer can learn to grade a question. They can be found [here](https://github.com/ace-lab/pl-ucb-csxxx/tree/uml-drawing-elements/questions/drawing-tutorials)
 
 ## Parsing
-There is a parser provided which turn the raw submitted data into element Python objects. The parser has the ability to compile these objects into a UML Model object. You do not need to use the parser, but it is recommended. If you decide to make your own parser, you can find the useful raw data that is submitted by the student here.
+There is a parser provided which turn the raw submitted data into element Python objects. The parser has the ability to compile these objects into a UML Model object. You do not need to use the parser, but it is recommended. If you decide to make your own parser, you can find the useful raw data that is submitted by the student [here](https://github.com/ace-lab/pl-ucb-csxxx/wiki/UML-Drawing-Elements#submitted-answers).
 
 ## Grading
 Once the submitted data is parsed, you will have a UML Model object which can be used for grading. This object will hold all of the individual objects on the canvas as element Python objects. The element Python objects contain various functions to help you grade. 
@@ -18,7 +18,7 @@ The file can be found [here](https://github.com/ace-lab/pl-ucb-csxxx/blob/uml-dr
 ## Usage question.html
 You can use the UML elements in a question like so: https://github.com/ace-lab/pl-ucb-csxxx/blob/631de1fdbe2b6651af502aeb8681f0192fd6a3d7/questions/drawing-tutorials/snapping-2/question.html#L10-L36
 
-Here are the attributes that can be assigned in the css for each element:
+The CSS attributes that can be set for each element can be found [here](https://github.com/ace-lab/pl-ucb-csxxx/wiki/UML-Drawing-Elements#css-attributes)
 
 
 ## Usage server.py
@@ -27,5 +27,6 @@ Use the tutorials as a guide for grading. Each tutorial will cover a different t
 ## Things left to do
 To make for a better user experience, the line button svg files should change according to the uml line type. This can be done here: 
 https://github.com/ace-lab/pl-ucb-csxxx/blob/7af36443a80dd0b936d137e1c1cee852c7a153be/elementExtensions/pl-drawing/polyLine/poly-line.js#L44-L50
-
 the uml line type can be accessed using `options.umlLineType`
+
+There are likely still bugs lying around.
