@@ -11,20 +11,21 @@
 
   Write this function using a <b>for</b> loop, not a <b>while</b> loop.<br><br>
 
-  <pl-code>
+  <pl-code language="python">
   >> poly([4], 2) # 4*(2**0)
   4
   >> poly([4, 5], 2) # 4*(2**0) + 5*(2**1)
   14
   >> poly([2,4,7], 6) # 2*(6**0) + 4*(6**1) + 7*(6**2)
-  276
-  </pl-code>
+  276</pl-code>
   
 </pl-question-panel>
 
-<pl-faded-parsons language="py" partial-credit="true" line-order="alpha">
-
-  <!-- see README for where the various parts of question live -->
-  
+<pl-faded-parsons>
+  def poly(coeffs, x): #0given
+  total = !BLANK
+  for power, coeff in enumerate(coeffs):
+  !BLANK = total + coeff * (x ** power) 
+  return total #1given
 </pl-faded-parsons>
 
