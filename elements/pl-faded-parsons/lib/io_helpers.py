@@ -8,9 +8,11 @@ from os import getcwd, listdir, makedirs, PathLike
 
 from lib.consts import Bcolors, PROGRAM_DESCRIPTION
 
+
 def file_name(file_path: PathLike[AnyStr]) -> AnyStr:
     """Returns the basename in the path without the file extensions"""
     return splitext(basename(file_path))[0]
+
 
 def file_ext(file_path: PathLike[AnyStr]) -> AnyStr:
     """Returns the file extension (or '' if none exists)"""
@@ -46,21 +48,22 @@ def read_region_source_lines(source_path: str, region_source: str) -> str:
         return ''.join(f.readlines())
 
 
-def auto_detect_sources() -> list[PathLike[AnyStr]]:
-    Bcolors.warn('** No paths provided, auto-detecting questions directory **')
+def auto_detect_sources(questions_dir: Optional[PathLike[AnyStr]] = None) -> list[PathLike[AnyStr]]:
+    Bcolors.warn('** Auto-detecting questions directory **')
 
     try:
-        questions_dir = resolve_path(
+        questions_dir = questions_dir or resolve_path(
             'questions', path_is_dir=True, silent=True)
+        resolve = partial(join, questions_dir)
+        def is_valid(f): return isfile(f) and file_ext(f).endswith('py')
+        return list(filter(is_valid, map(resolve, listdir(questions_dir))))
     except FileNotFoundError as e:
         Bcolors.fail(
             '** Auto-detection failed. Please provide paths to sources. (use --help for more info) **')
         if e.args:
             Bcolors.fail(*e.args)
 
-    resolve = partial(join, questions_dir)
-    def is_valid(f): return isfile(f) and file_ext(f).endswith('py')
-    return list(filter(is_valid, map(resolve, listdir(questions_dir))))
+    return []
 
 
 def resolve_path(path: str, *,
@@ -133,7 +136,9 @@ def parse_args(arg_text: str = None) -> Namespace:
     parser.add_argument('--no-parse', action='store_true',
                         help='prevents the code from being parsed by py.ast to derive content')
 
-    parser.add_argument('source_path', action='append', nargs='*')
+    parser.add_argument('source_paths', action='append', nargs='*')
+    parser.add_argument('--questions-dir', action='append', metavar='path',
+                        help='target all .py files in directory as sources')
     parser.add_argument('--force-json', action='append', metavar='path',
                         help='will overwrite the question\'s info.json file with auto-generated content')
 
@@ -141,8 +146,11 @@ def parse_args(arg_text: str = None) -> Namespace:
     ns = parser.parse_intermixed_args(args=arg_text)
 
     # unpack weird nesting, delete confusing name
-    ns.source_paths = [p for l in ns.source_path for p in l]
-    del ns.source_path
+    ns.source_paths = [p for l in ns.source_paths for p in l]
+    if ns.questions_dir:
+        for qd in ns.questions_dir:
+            ns.source_paths.extend(auto_detect_sources(qd))
+        del ns.questions_dir
 
     ns.force_json = ns.force_json or list()
     return ns
