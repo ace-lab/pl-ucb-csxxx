@@ -1,14 +1,63 @@
-# On Generating Questions
+# Tool Quickstart
+
+## Run on the Examples
+Install the latest version of Python, and run
+```
+ .../pl-ucb-csxxx % python3 elements/pl-faded-parsons/generate_fpp.py \
+    --questions-dir questions/pl-faded-parsons-examples --quiet
+```
+The output should be:
+```
+** Auto-detecting questions directory **
+Generating from source questions/pl-faded-parsons-examples/square_color.py
+Done.
+Generating from source questions/pl-faded-parsons-examples/make_four.py
+- Writing unrecognized regions:
+  - questions/pl-faded-parsons-examples/make_four/res/four.txt ...
+  - questions/pl-faded-parsons-examples/make_four/res/empty.txt ...
+  - questions/pl-faded-parsons-examples/make_four/res/seuss.py ...
+Done.
+Generating from source questions/pl-faded-parsons-examples/sublist.py
+Done.
+Generating from source questions/pl-faded-parsons-examples/polynomial_evaluation.py
+Done.
+Generating from source questions/pl-faded-parsons-examples/2x2_determinant.py
+Done.
+Batch completed successfullly on 5 files
+```
+## Command Usage
+
+```
+usage: generate_fpp.py [-h] [--profile] [--quiet] [--no-parse] 
+                [--questions-dir path] [--force-json path] [source_paths ...]
+
+positional arguments:
+  source_paths
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --profile             prints profile data after running
+  --quiet               restricts logging to warnings and errors only
+  --no-parse            prevents the code from being parsed by py.ast to derive content
+  --questions-dir path  target all .py files in directory as sources
+  --force-json path     will overwrite the question's info.json file with auto-generated content
+```
+
+# Full Guide to Generating Questions
 
 ## Setup
 
 ### Development Requirements
 
 - Docker
+- Python 3.8 or Later
 
 Via docker, the appropriate images can be maintained and installed. 
 You may optionally install [a local prairielearn clone](https://github.com/PrairieLearn/PrairieLearn) if you want to tinker with its internals.
 
+### Grading
+
+The tool has the ability to generate testing content, but the prairielearn's python autograder will not be able to be run locally without following [these steps in the pl dev guide](https://prairielearn.readthedocs.io/en/latest/externalGrading/#running-locally-for-development) to initialize docker correctly.
 
 ### PrairieLearn Directory Structure
 
@@ -37,10 +86,6 @@ It contains all the html and js files required by prairielearn to display a `<pl
 
 This element is then used by questions you would traditionally write as subfolders in the `questions` directory. 
 The tool `generate_fpp.py` will take well-formatted python files and turn them into a question folder.
-
-### Grading
-
-The tool has the ability to generate testing content, but the prairielearn's python autograder will not be able to be run locally without following [these steps in the pl dev guide](https://prairielearn.readthedocs.io/en/latest/externalGrading/#running-locally-for-development) to initialize docker correctly.
 
 ## Formatting a Source File
 
