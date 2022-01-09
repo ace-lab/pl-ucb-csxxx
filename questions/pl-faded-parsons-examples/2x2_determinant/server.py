@@ -4,7 +4,7 @@
 def generate(data):
     # Define incoming variables here
     names_for_user = [
-        # ex: student recieves a matrix m
+        # ex: student receives a matrix m
         # {"name": "m", "description": "a 2x2 matrix", "type": "numpy array"}
     ]
     # Define outgoing variables here

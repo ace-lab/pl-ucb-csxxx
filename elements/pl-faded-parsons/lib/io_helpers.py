@@ -49,21 +49,22 @@ def read_region_source_lines(source_path: str, region_source: str) -> str:
 
 
 def auto_detect_sources(questions_dir: Optional[PathLike[AnyStr]] = None) -> list[PathLike[AnyStr]]:
-    Bcolors.warn('** Auto-detecting questions directory **')
+    if not questions_dir:
+        Bcolors.warn('** No paths provided, auto-detecting questions directory **')
 
     try:
         questions_dir = questions_dir or resolve_path(
             'questions', path_is_dir=True, silent=True)
-        resolve = partial(join, questions_dir)
-        def is_valid(f): return isfile(f) and file_ext(f).endswith('py')
-        return list(filter(is_valid, map(resolve, listdir(questions_dir))))
     except FileNotFoundError as e:
         Bcolors.fail(
             '** Auto-detection failed. Please provide paths to sources. (use --help for more info) **')
         if e.args:
             Bcolors.fail(*e.args)
 
-    return []
+    resolve = partial(join, questions_dir)
+    def is_valid(f): 
+        return isfile(f) and file_ext(f).endswith('py')
+    return list(filter(is_valid, map(resolve, listdir(questions_dir))))
 
 
 def resolve_path(path: str, *,
@@ -108,11 +109,13 @@ def resolve_path(path: str, *,
         if exists(new_path):
             warn()
             return new_path
+
         # try original in course directory
         new_path = join('..', '..', original)
         if exists(new_path):
             warn()
             return new_path
+
     new_path = join('questions', original)
     if exists(new_path):
         warn()
@@ -136,7 +139,7 @@ def parse_args(arg_text: str = None) -> Namespace:
     parser.add_argument('--no-parse', action='store_true',
                         help='prevents the code from being parsed by py.ast to derive content')
 
-    parser.add_argument('source_paths', action='append', nargs='*')
+    parser.add_argument('source_path', action='append', nargs='*')
     parser.add_argument('--questions-dir', action='append', metavar='path',
                         help='target all .py files in directory as sources')
     parser.add_argument('--force-json', action='append', metavar='path',
@@ -146,7 +149,9 @@ def parse_args(arg_text: str = None) -> Namespace:
     ns = parser.parse_intermixed_args(args=arg_text)
 
     # unpack weird nesting, delete confusing name
-    ns.source_paths = [p for l in ns.source_paths for p in l]
+    ns.source_paths = [p for l in ns.source_path for p in l]
+    del ns.source_path
+
     if ns.questions_dir:
         for qd in ns.questions_dir:
             ns.source_paths.extend(auto_detect_sources(qd))

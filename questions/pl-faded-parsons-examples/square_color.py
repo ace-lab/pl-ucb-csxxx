@@ -15,4 +15,4 @@ def square_color(pos): #0given
     same_as_first = rank % ?2? == 0
     return black_first_square == same_as_first
 
-## import square_color/tests/test.py as test ##
+## import square_color_test.json as test ##

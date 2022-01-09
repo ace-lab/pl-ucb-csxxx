@@ -1,13 +1,14 @@
 from typing import *
 
 from collections import defaultdict, namedtuple
-from json import dumps
+from json import dumps, loads
 from os import path, PathLike
 from re import finditer, match as test
 from shutil import copyfile
 from uuid import uuid4
 from functools import partial
 
+from lib.generate_test import make_test_file
 from lib.consts import MAIN_PATTERN, SPECIAL_COMMENT_PATTERN, \
     BLANK_SUBSTITUTE, SETUP_CODE_DEFAULT, TEST_DEFAULT, REGION_IMPORT_PATTERN
 from lib.name_visitor import generate_server, AnnotatedName
@@ -79,14 +80,16 @@ def extract_regions(
 
     for match in finditer(MAIN_PATTERN, source_code):
         start, end = match.span()
-        # make sure to keep uncaptured text between matches
-        # (if no uncaptured text exists, unmatched = '')
+
+        # make sure to keep un-captured text between matches
+        # (if no un-captured text exists, unmatched = '')
         unmatched = source_code[last_end:start]
         if current_region:
             regions[current_region.id] += unmatched
         else:
             regions['prompt_code'] += unmatched
             regions['answer_code'] += unmatched
+
         # keep the line number updated
         line_number += sum(1 for x in unmatched if x == '\n')
 
@@ -158,6 +161,7 @@ def extract_regions(
             regions['answer_code'] += blank_ans
         else:
             raise Exception('All capture groups are None after', last_end)
+
         # keep track of any \n in the matched part of the string
         # (namely for docstrings or region delimiters)
         line_number += sum(1 for x in source_code[start:end] if x == '\n')
@@ -221,7 +225,7 @@ def generate_question_html(
                 question_text += '\n\n'
 
         if answer_names:
-            question_text += '### Requried\n'
+            question_text += '### Required\n'
             question_text += '\n'.join(
                 map(format_annotated_name, answer_names))
 
@@ -261,7 +265,14 @@ def generate_info_json(question_name: str, *, indent=4) -> str:
 
     return dumps(info_json, indent=indent) + '\n'
 
-
+def try_generate_test_file(test_data: str) -> Tuple[bool, str]:
+    try:
+        json = loads(test_data)
+    except Exception as e:
+        return False, test_data
+    
+    return True, make_test_file(json)
+    
 def generate_fpp_question(
     source_path: PathLike[AnyStr], *,
     force_generate_json: bool = False,
@@ -272,7 +283,7 @@ def generate_fpp_question(
     """ Takes a path of a well-formatted source (see `extract_prompt_ans`),
         then generates and populates a question directory of the same name.
     """
-    Bcolors.printf(Bcolors.OKBLUE, 'Generating from source', source_path)
+    Bcolors.info('Generating from source', source_path)
 
     source_path = resolve_path(source_path)
 
@@ -298,6 +309,7 @@ def generate_fpp_question(
 
     if log_details:
         print('- Creating destination directories...')
+
     test_dir = path.join(question_dir, 'tests')
     make_if_absent(test_dir)
 
@@ -345,12 +357,27 @@ def generate_fpp_question(
         print('- Populating {} ...'.format(test_dir))
 
     write_to(test_dir, 'ans.py', answer_code)
+
     write_to(test_dir, 'setup_code.py', setup_code)
 
-    write_to(test_dir, 'test.py', remove_region('test', TEST_DEFAULT))
+    test_region = remove_region('test', TEST_DEFAULT)
+
+    try:
+        success, test_file = try_generate_test_file(test_region)
+        if success and log_details:
+            Bcolors.info('  - Generating tests/test.py from json test region')
+            write_to(test_dir, 'test_source.json', test_region)
+    except SyntaxError as e:
+        if log_details:
+            Bcolors.fail('    * Generating tests from json failed with error:', e.msg)
+            Bcolors.warn('    - Recovering by using test region as python file')
+        test_file = test_region
+    
+    write_to(test_dir, 'test.py', test_file)
 
     if regions:
         Bcolors.warn('- Writing unrecognized regions:')
+
     for raw_path, data in regions.items():
         if not raw_path:
             Bcolors.warn('  - Skipping anonymous region!')
@@ -359,6 +386,7 @@ def generate_fpp_question(
         # if no file extension is given, give it .py
         if not file_ext(raw_path):
             raw_path += '.py'
+
         # ensure that the directories exist before writing
         final_path = path.join(question_dir, raw_path)
         make_if_absent(path.dirname(final_path))
@@ -367,7 +395,7 @@ def generate_fpp_question(
         # write files
         write_to(question_dir, raw_path, data)
 
-    Bcolors.printf(Bcolors.OKGREEN, 'Done.')
+    Bcolors.printf(Bcolors.OK_GREEN, 'Done.')
 
 
 def generate_many(args: Namespace):
@@ -397,6 +425,7 @@ def generate_many(args: Namespace):
             successes += 1
         else:
             failures += 1
+
     for source_path in args.force_json:
         if generate_one(source_path, force_json=True):
             successes += 1
@@ -407,8 +436,7 @@ def generate_many(args: Namespace):
     if successes + failures > 1:
         def n_files(n): return str(n) + ' file' + ('' if n == 1 else 's')
         if successes:
-            Bcolors.printf(
-                Bcolors.OKGREEN, 'Batch completed successfullly on', n_files(successes), end='')
+            Bcolors.ok('Batch completed successfully on', n_files(successes), end='')
             if failures:
                 Bcolors.fail(' and failed on', n_files(failures))
             else:
@@ -416,12 +444,14 @@ def generate_many(args: Namespace):
         else:
             Bcolors.fail('Batch failed on all', n_files(failures))
 
+
 def profile_generate_many(args: Namespace):
     from cProfile import Profile
     from pstats import Stats, SortKey
 
     with Profile() as pr:
         generate_many(args)
+
     stats = Stats(pr)
     stats.sort_stats(SortKey.TIME)
     print('\n---------------\n')
@@ -435,6 +465,7 @@ def main():
         profile_generate_many(args)
     else:
         generate_many(args)
+
 
 if __name__ == '__main__':
     main()

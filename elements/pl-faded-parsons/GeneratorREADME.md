@@ -8,7 +8,6 @@ Install the latest version of Python, and run
 ```
 The output should be:
 ```
-** Auto-detecting questions directory **
 Generating from source questions/pl-faded-parsons-examples/square_color.py
 Done.
 Generating from source questions/pl-faded-parsons-examples/make_four.py
@@ -23,7 +22,7 @@ Generating from source questions/pl-faded-parsons-examples/polynomial_evaluation
 Done.
 Generating from source questions/pl-faded-parsons-examples/2x2_determinant.py
 Done.
-Batch completed successfullly on 5 files
+Batch completed successfully on 5 files
 ```
 ## Command Usage
 
@@ -50,14 +49,10 @@ optional arguments:
 ### Development Requirements
 
 - Docker
-- Python 3.8 or Later
 
 Via docker, the appropriate images can be maintained and installed. 
-You may optionally install [a local prairielearn clone](https://github.com/PrairieLearn/PrairieLearn) if you want to tinker with its internals.
+You may optionally install [a local PrairieLearn clone](https://github.com/PrairieLearn/PrairieLearn) if you want to tinker with its internals.
 
-### Grading
-
-The tool has the ability to generate testing content, but the prairielearn's python autograder will not be able to be run locally without following [these steps in the pl dev guide](https://prairielearn.readthedocs.io/en/latest/externalGrading/#running-locally-for-development) to initialize docker correctly.
 
 ### PrairieLearn Directory Structure
 
@@ -77,21 +72,25 @@ root-course-directory
 |   |   ...                     <<
 |   |
 |   +-- question1               <<
-|   +-- question2               << ...the generated prairielearn questions
+|   +-- question2               << ...the generated PrairieLearn questions
 |   |   ...                     <<
 ```
 
 To begin writing any FPP questions, you will need the `pl-faded-parsons` directory and all of its contents. 
-It contains all the html and js files required by prairielearn to display a `<pl-faded-parsons>` element.
+It contains all the html and js files required by PrairieLearn to display a `<pl-faded-parsons>` element.
 
 This element is then used by questions you would traditionally write as subfolders in the `questions` directory. 
 The tool `generate_fpp.py` will take well-formatted python files and turn them into a question folder.
+
+### Grading
+
+The tool has the ability to generate testing content, but the PrairieLearn's python autograder will not be able to be run locally without following [these steps in the pl dev guide](https://prairielearn.readthedocs.io/en/latest/externalGrading/#running-locally-for-development) to initialize docker correctly.
 
 ## Formatting a Source File
 
 ### Usable Files
 
-Any file following the semantic rules (see below) may be provided, but the tool will only autodetect python files.
+Any file following the semantic rules (see below) may be provided, but the tool will only auto-detect python files.
 
 This tool will search for a provided path in `./`, `questions/`, `../../questions/`, and finally `../../` before erring.
 If none is provided, it will hunt for a `questions` directory in these locations, and use all .py files there.
@@ -169,7 +168,7 @@ This will create a reference solution and sortable code lines in a `<pl-faded-pa
 Note that the full-line comments as well as the `# return early!` comment will be included in the reference solution, but not the sortable code lines.
 
 By contrast, the special-form comments (eg `#0given` and `#blank _:_`) will not appear in the reference solution, but will edit the starting configuration of the sortable code lines.
-(`#0given` includes `def is_sublist(lst, sublist):` as a part of the starting solution with 0 indents, `#1given` includes `return False` with 1 indent, and `#blank _:_` sets the inital text of the blank in the brackets to `_:_`. )
+(`#0given` includes `def is_sublist(lst, sublist):` as a part of the starting solution with 0 indents, `#1given` includes `return False` with 1 indent, and `#blank _:_` sets the initial text of the blank in the brackets to `_:_`. )
 
 There is no way to indicate a red-herring or distractor line! 
 Distractors are philosophically  antithetical to the design of FPPs!
@@ -183,15 +182,18 @@ from pl_unit_test import PLTestCase
 from code_feedback import Feedback
 
 def score_cases(student_fn, ref_fn, *cases):
-    proportion_correct = 0
+    correct = 0
     for case in cases:
         user_val = Feedback.call_user(student_fn, *case)
         ref_val = ref_fn(*case)
         if user_val == ref_val:
-            proportion_correct += 1
-    proportion_correct /= len(cases)
-
-    Feedback.set_score(proportion_correct)
+            correct += 1
+    
+    # set_score must be in range 0.0 to 1.0
+    if cases:
+        Feedback.set_score(correct / len(cases))
+    else:
+        Feedback.set_score(1.0)
 
 class Test(PLTestCase):
     @points(2)
@@ -217,7 +219,7 @@ class Test(PLTestCase):
 ```
 If the `## test ##` does not **start and end** before the end of the file or the start of the next region, there will be a syntax error!
 
-[The proper way to write test methods is in prairielearn's developer guide.](https://prairielearn.readthedocs.io/en/latest/python-grader/#teststestpy)
+[The proper way to write test methods is in PrairieLearn's developer guide.](https://prairielearn.readthedocs.io/en/latest/python-grader/#teststestpy)
 
 ### Example Test Takeaways
 
@@ -232,7 +234,7 @@ At a glance:
 
 Common Gotchas:
  - Setting the highest possible points value for a test function is done through `@points`, and the performance is entered on a 0-to-1 scale through `Feedback.set_score`. 
- **Entering the number of points recieved will not work!**
+ **Entering the number of points received will not work!**
  - Test helper functions (ie `score_cases` in the example above) **cannot** be methods (static or instance) on the Test class. 
  They must be defined in a different scope.
 
@@ -297,10 +299,10 @@ def to_coordinates(pos: str) -> tuple[int, int]:
 ...
 ```
 The `setup_code` region is required to determine that this is not code to be given to the student. 
-They will have no visibility of this code, but its name will be availiable to them.
+They will have no visibility of this code, but its name will be available to them.
 
 This code will be parsed and the type information and documentation extracted.
-They will be used as help text in prairielearn and displayed in the prompt.
+They will be used as help text in PrairieLearn and displayed in the prompt.
 It cannot contain blanks.
 
 The rest of the file proceeds in the usual way:
@@ -316,9 +318,9 @@ def square_color(pos): #0given
 # tests down here ...
 ```
 
-### Advanced Import Regions
+### Import Regions and Custom Regions
 
-Note that is possible to direct imports at previously generated files to effectively prevent the tool from overwritting data, eg
+Note that is possible to direct imports at previously generated files to effectively prevent the tool from over-writing data, eg
 
 ``` python
 ## import question_name/server.py as server.py ##
@@ -335,6 +337,76 @@ See the regions section for special names like `test` and `question_text`. All n
 ```
 
 will write the single line `3.14159` to `question_name/res/pi.txt`.
+
+## Generating Boilerplate Tests with `generate_test.py`
+
+Most test files for FPP follow the same pattern as the first example, having a suite of tests, each with their own set of inputs. 
+The results of applying the reference and student functions to the inputs are used to determine the score for the problem.
+
+The `lib` folder contains a standalone tool called `generate_test.py` that will accept a well-formatted JSON file to create tests.
+Alternatively, providing a json as the `test` region will automatically run the tool and populate the test file with the output.
+These json's can also be imported normally, eg
+``` python
+## import problem_test.json as test ##
+```
+
+The json file must follow this schema:
+``` Python
+{
+    "functionName": str,
+    "tests": list[{
+        "name": str,
+        "points": int,
+        "cases": list[str] # representing fn arguments for each case
+    }]
+}
+```
+Note that each case must be a string of the tuple of the arguments for that case, eg the written out case `foo(2, [2, 3], 'hi')` would be the json case `"(2, [2, 3], 'hi')"`. 
+The enclosing parenthesis may also be omitted, so the case `baz("hello")` could be written `"hello"`.
+
+Tuple generator unpacking is also valid for programmatically listing cases.
+Consider the test cases `baz(0, 'a')`, `baz(1, 'b')`, `baz(2, 'c')`, all the way to `baz(25, 'z')`. These cases may be written using tuple unpacking, eg
+``` python
+(i, chr(i + 97)) for i in range(26) # ord('a') == 97
+```
+will generate the cases as tuples, so the json case would read
+``` python
+"*( (i, chr(i + 97)) for i in range(26) )"
+```
+
+### JSON Example
+
+To generate the test file shown in the simple example section, the following json could be provided as the `test` region or saved as a json file and supplied directly to the `generate_test` tool:
+
+``` json
+{
+  "functionName": "is_sublist",
+  "tests": [
+    {
+      "name": "example cases",
+      "points": 2,
+      "inputs": [
+          "['a', 'b', 'c', 'd'], ['b', 'c']", 
+          "[1, 2, 3, 4], [4, 3]"
+        ]
+    },
+    {
+      "name": "advanced cases",
+      "points": 8,
+      "inputs": [
+        "[1, 2, 3, 4], [2, 3]",
+        "[1, 2, 3, 4], [3, 2]",
+        "[1, 2, 3, 4], []",
+        "[1, 2, 3, 4], [1, 2, 3, 4]",
+        "[1, 2, 3, 4], [1, 2, 3, 4, 5]"
+      ]
+    }
+  ]
+}
+```
+
+Note that each test became a PLTestCase method with the exact input cases listed.
+
 
 ## Generated Files
 
@@ -353,11 +425,11 @@ The server file specifies which names pass into the student's scope, and which n
 The code in the `setup_code` and `prompt_code` regions will be parsed to derive which names enter and exit this scope, and what types they carry.
 
 Parsing of this code can be disabled for an entire batch by the flag `--no-parse`, but it will overwrite any existing `server.py` with the default.
-(See the complex example's advanced import regions on how to avoid overwritting.)
+(See the complex example's advanced import regions on how to avoid over-writing.)
 
 ### The `tests` Directory
 
 This is filled with the answer, setup code, and test code.
 This is where the python autograder automatically looks for the files named `ans.py`, `setup_code.py`, and `test.py`.
 
-These are the files that get generated from their respsective special name regions.
+These are the files that get generated from their respective special name regions.

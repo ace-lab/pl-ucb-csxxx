@@ -5,6 +5,7 @@ from dataclasses import dataclass
 
 from lib.consts import Bcolors, SERVER_DEFAULT
 
+
 @dataclass(init=True, repr=True, frozen=True)
 class AnnotatedName:
     id: str
@@ -123,7 +124,7 @@ def generate_server(setup_code: str, answer_code: str, *,
     if setup_names:
         lines.extend((2, format_annotated_name(n)) for n in setup_names)
     else:
-        lines.append((2, '# ex: student recieves a matrix m'))
+        lines.append((2, '# ex: student receives a matrix m'))
         lines.append(
             (2, '# {"name": "m", "description": "a 2x2 matrix", "type": "numpy array"}'))
 
