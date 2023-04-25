@@ -1,0 +1,31 @@
+digraph {
+	A [label=A]
+	B [label=B]
+	C [label=C]
+	D [label=D]
+	E [label=E]
+	F [label=F]
+	G [label=G]
+	H [label=H]
+	I [label=I]
+	J [label=J]
+	A -> C
+	A -> J
+	B -> E
+	B -> F
+	B -> H
+	B -> J
+	C -> D
+	C -> F
+	C -> G
+	D -> F
+	D -> G
+	D -> H
+	D -> J
+	E -> H
+	E -> I
+	F -> I
+	F -> J
+	G -> H
+	I -> J
+}

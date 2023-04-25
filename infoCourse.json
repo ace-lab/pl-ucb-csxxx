@@ -1,7 +1,7 @@
 {
-  "uuid": "99999999-9999-9999-9999-999999999999",
-  "name": "XC 101",
-  "title": "Example Course",
+  "uuid": "C02B0993-1101-4603-A58F-2ECB82EDA82A",
+  "name": "CS170",
+  "title": "Efficient Algorithms and Intractable Problems",
   "options": {
     "useNewQuestionRenderer": true
   },
