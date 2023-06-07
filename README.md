@@ -1,6 +1,6 @@
 # Welcome!  New here?
 
-If you're new, please use this repo's [wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
+If you're new, please use [this repo's wiki](https://github.com/ace-lab/pl-ucb-csxxx/wiki)
 to get started!
 
 # Using this repo as a template to make a new course?
@@ -11,12 +11,13 @@ where `SSS` is your project
 institution name (`ucb`, `csulb`, `ecc`) and `CCC` is the lowercase course
 number at your institution (eg `pl-ucb-cs169a`, `pl-ecc-csci8`, etc).
     
-Once you have your repo established, you should immediately do the following:
+We (UCB PL admins) should already have created a team
+`pl-dev-SSS-CCC` that has write access to your repo; email us the
+names of any course staff who should have access.  **WARNING:** your
+repo will likely contain sensitive content such as exam questions.  Be
+careful who has access.  **All access to PL repos is by teams**, not
+by adding individuals, to keep access control manageable.
 
-* Create a team that is a child of `pl-dev` and is named
-`pl-dev-SSS-CCC` (like the repo name; eg for `pl-ucb-cs169`, the
-team name should be `pl-dev-ucb-cs169`) that has Read/Write access
-to your repo, and add the course staff to it
 * Delete the `elements` subdirectory, unless you specifically want to use
 the custom elements in here (see below for some documentation)
 * Delete the contents of `serverFilesCourse` and `clientFilesCourse`
@@ -25,4 +26,6 @@ later)
 * Delete the contents of `questions/`, which will be replaced with
 your course's questions
 * Immediately update this `README.md` and `infoCourse.json` to
-reflect the info for your course
+reflect the info for your course, including inserting a valid UUID for
+the course.  You can run `uuidgen` at a shell prompt to make one.
+
