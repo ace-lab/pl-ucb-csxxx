@@ -29,3 +29,8 @@ your course's questions
 reflect the info for your course, including inserting a valid UUID for
 the course.  You can run `uuidgen` at a shell prompt to make one.
 
+**Note:** Although it has become customary to name the primary Git
+branch `main` rather than `master`, **do not do so for PL repos** as
+the server will not be able to sync them.  The server will only sync
+to the `master` branch.
+
