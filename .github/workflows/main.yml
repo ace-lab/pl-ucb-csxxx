@@ -20,14 +20,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Runs a basic linter over Python, JSON, etc.
     # Configuration: https://github.com/marketplace/actions/super-linter
     - name: Super-Linter
-      uses: github/super-linter@v2.2.0
+      uses: github/super-linter@v4
       env:
         VALIDATE_ALL_CODEBASE: false # Validate only changed files. (TODO: Remove after remediations.)
-    
+
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # exclude auto-generated question.html files in the examples directory
+        # to suppress errors about pl-markdown body characters.
+        FILTER_REGEX_EXCLUDE: '.*questions\/pl-faded-parsons-examples\/.*\/.*question.html'
+
     - name: Validate-Info-JSONs
       run: bash validation_workflow/validate_changed_files
