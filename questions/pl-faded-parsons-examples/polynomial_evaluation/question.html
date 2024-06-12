@@ -1,0 +1,25 @@
+<!-- AUTO-GENERATED FILE -->
+<pl-question-panel>
+  <h3> Prompt </h3>
+  Write a function <code>poly</code> that calculates the values of a 
+polynomial with the given coefficients at the given value of <code>x</code>,
+ie, evaluate $$f(x) = \sum_i \textrm{coeffs}_i ~ x^i$$
+
+<markdown>
+### Provided
+ - `a: int`
+ - `b`
+ - `l: list[int]`
+ - `c`
+</markdown>
+
+</pl-question-panel>
+
+<!-- see README for where the various parts of question live -->
+<pl-faded-parsons>
+  def poly(coeffs, x): #0given
+  total = !BLANK #blank test #1given
+  for power, coeff in enumerate(coeffs):
+  !BLANK = total + coeff * (x ** power) #2given
+  return total #1given
+</pl-faded-parsons>

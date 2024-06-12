@@ -1,0 +1,23 @@
+<!-- AUTO-GENERATED FILE -->
+<pl-question-panel>
+ Make a function <code>is_sublist</code> that checks whether the first
+    argument contains the second as a sublist (including ordering), eg
+
+    <pl-code language="python">
+    >> is_sublist(['a', 'b', 'c', 'd'], ['b', 'c'])
+    True
+    >> is_sublist([1, 2, 3, 4], [4, 3])
+    False</pl-code>
+
+</pl-question-panel>
+
+<!-- see README for where the various parts of question live -->
+<pl-faded-parsons>
+  def is_sublist(list, sublist): #0given
+  n, m = len(list), len(sublist) #1given
+  for i in range(!BLANK):
+  start, end = i, i + m
+  if list[!BLANK] == sublist: #blank _:_
+  return !BLANK
+  return False #1given
+</pl-faded-parsons>

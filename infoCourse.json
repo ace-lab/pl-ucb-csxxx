@@ -1,7 +1,7 @@
 {
-  "uuid": "REPLACE ME WITH A VALID UUID by running uuidgen in a shell",
-  "name": "CS170",
-  "title": "Efficient Algorithms and Intractable Problems",
+  "uuid": "99999999-9999-9999-9999-999999999999",
+  "name": "CS XXX",
+  "title": "Example Course",
   "options": {
     "useNewQuestionRenderer": true
   },
