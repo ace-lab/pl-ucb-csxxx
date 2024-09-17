@@ -1,0 +1,22 @@
+services:
+  prairielearn:
+    image: prairielearn/prairielearn:latest
+    platform: linux/amd64
+    environment:
+      HOST_JOBS_DIR: /tmp/dir-for-ag-jobqueue
+    ports:
+      - 3000:3000
+    volumes:
+      - /tmp/dir-for-ag-jobqueue:/jobs
+      - ..:/course
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/universal
+    platform: linux/amd64
+    links:
+      - prairielearn
+    volumes: # Mount the root folder that contains .git
+      - ..:/workspaces/pl-ucb-csxxx:rw
