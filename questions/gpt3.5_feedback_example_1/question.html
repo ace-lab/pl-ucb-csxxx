@@ -1,0 +1,38 @@
+<pl-question-panel>
+    <p>
+        A valid partition of a positive integer <tt>n</tt> is a sequence of positive integers in non-decreasing order that sum up to <tt>n</tt>.
+        <p>
+        Here are a few examples of valid and invalid partitions of 4:
+        <ul>
+            <li>(4): Valid.</li>
+            <li>(1, 3): Valid.</li>
+            <li>(2, 2): Valid.</li>
+            <li>(3, 1): Invalid — numbers are not in non-decreasing order.</li>
+            <li>(0, 4): Invalid — 0 is not positive.</li>
+            <li>(2, 3): Invalid — 2 + 3 != 4.</li>
+        </ul>
+        </p>
+        Write a Python function named <tt>generate_partitions</tt> that takes in two arguments: <tt>n</tt>, a positive integer, and <tt>I</tt>, a positive integer with a default value of 1. The function should return a list of tuples of valid partitions of <tt>n</tt> — where <tt>I</tt> is the smallest integer used in any partition.
+    </p>
+    <p>
+        Here are some examples:
+        <ul>
+            <li><tt>generate_partitions(4)</tt> should return <tt>[(1, 1, 1, 1), (1, 1, 2), (1, 3), (2, 2), (4,)]</tt>.</li>
+            <li><tt>generate_partitions(4, 2)</tt> should return <tt>[(2, 2), (4,)]</tt>.</li>
+            <li><tt>generate_partitions(0)</tt> should return <tt>[()]</tt> since there are no valid partitions.</li>
+        </ul>
+    </p>
+
+    <pl-external-grader-variables params-name="names_from_user">
+      <pl-variable name="generate_partitions" type="Python function">Function to generate valid partitions of n</pl-variable>
+    </pl-external-grader-variables>
+    <pl-external-grader-variables params-name="names_for_user" empty="true"></pl-external-grader-variables>
+
+    <pl-file-editor file-name="user_code.py" ace-mode="ace/mode/python" source-file-name="initial_code.py">
+    </pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>
