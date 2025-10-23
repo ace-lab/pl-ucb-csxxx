@@ -1,0 +1,28 @@
+<div>
+    <canvas id="fsm-canvas" width="800" height="600"></canvas>
+    <input type="hidden" name="graphData" id="graphData">
+    <br>
+    <button type="button" name="clear-fsm" id="clear-fsm">Clear</button>
+    
+    <div id="fsm-instructions" style="margin-top: 15px; font-family: Arial, sans-serif; font-size: 15px;">
+    <h4 style="margin-bottom: 8px;">How to Use the PL Graph Constructor:</h3>
+    <ul style="line-height: 1.6; padding-left: 20px;">
+        <li><strong>Add a node:</strong> double-click on the canvas</li>
+        <li><strong>Add an edge:</strong> shift-drag (press & hold) from node on the canvas</li>
+        <li><strong>Label an object:</strong> click it and type</li>
+        <li><strong>Move an object:</strong> drag (press & hold) it around</li>
+        <li><strong>Delete an object:</strong> click it and press the delete key (command+delete on Mac) or "X" key</li>
+    </ul>
+</div>
+</div>
+
+<script>
+    const config = {
+        answers_name: "{{config_py.answers_name}}",
+        directed: {{config_py.directed}},
+        allow_selflinks: {{config_py.allow_selflinks}},
+        multigraph: {{config_py.multigraph}},
+        allow_nodemarking: {{config_py.allow_nodemarking}}
+    };
+
+</script>

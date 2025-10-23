@@ -1,0 +1,42 @@
+{
+    "uuid": "7046c3d0-567a-4e1d-a352-ce82d031f7ab",
+    "type": "Homework",
+    "title": "Graph Creation Examples",
+    "set": "Homework",
+    "number": "1",
+    "allowAccess": [],
+    "zones": [
+        {
+            "comment": "These are new questions created for the pl-interactive-graph element",
+            "questions": [
+                
+                {
+                    "id": "Graph-Construction-Q1",
+                    "autoPoints": 1
+                },
+
+                {
+                    "id": "Graph-Construction-Q2",
+                    "autoPoints": 1
+                },
+
+                {
+                    "id": "Graph-Construction-Q3",
+                    "autoPoints": 1
+                },
+
+                {
+                    "id": "Graph-Construction-Q4",
+                    "autoPoints": 1
+                },
+
+                {
+                    "id": "Graph-Construction-Q5",
+                    "autoPoints": 1
+                }
+
+            ]
+
+        }
+    ]
+}

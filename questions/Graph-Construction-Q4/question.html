@@ -1,0 +1,52 @@
+<pl-question-panel>
+    <h2>Hard Level - Copy Graph</h2>
+
+    <p>Copy the graph below into <strong>PL Graph Constructor</strong> and press "Save & Grade"</p>
+        
+    <p>Refer to instructions under the canvas if needed</p>
+    
+    <!-- <img src="graph.png" alt="Graph Visualization" width="600"> -->
+
+    <pl-graph>
+        digraph {
+            rankdir=LR;
+    
+            node [shape=circle, fontname="Helvetica", fontsize=18, width=0.65, fixedsize=true];
+            edge [fontname="Helvetica", fontsize=14];
+    
+            // Define nodes
+            A; B; C; D; E; F; G; H; I;
+    
+            // Define edges with weights, including self-links
+            A -> B [label="5"];
+            A -> C [label="3"];
+            A -> A [label="2"]; // Self-link
+            B -> D [label="4"];
+            B -> B [label="-1"]; // Self-link
+            C -> E [label="1"];
+            C -> F [label="3"];
+            D -> G [label="6"];
+            D -> H [label="-2"];
+            E -> F [label="2"];
+            E -> E [label="4"]; // Self-link
+            F -> G [label="1"];
+            G -> H [label="3"];
+            G -> I [label="7"];
+            H -> I [label="-4"];
+            H -> H [label="-2"]; // Self-link
+            I -> A [label="8"];
+        }
+    </pl-graph>
+    
+    
+</pl-question-panel>
+
+<pl-graph-constructor answers-name="graph_input4" directed="true" allow-selflinks="true"></pl-graph-constructor>
+
+  
+  
+  
+
+
+  
+  

@@ -1,0 +1,11 @@
+#fsm-canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+    position: relative;
+    z-index: 0;
+}
+
+#clear-fsm {
+    position: relative;
+    z-index: 1;
+}

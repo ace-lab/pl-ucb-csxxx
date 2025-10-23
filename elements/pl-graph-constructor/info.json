@@ -1,0 +1,7 @@
+{
+    "controller": "pl-graph-constructor.py",
+    "dependencies": {
+      "elementScripts": ["pl-graph-constructor.js"],
+      "elementStyles": ["pl-graph-constructor.css"]
+    }
+  }

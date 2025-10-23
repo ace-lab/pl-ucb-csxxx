@@ -1,0 +1,34 @@
+<pl-question-panel>
+    <h2>Residual in graphs</h2>
+    <p>Consider the following graph with edge capacities as shown:</p>
+</pl-question-panel>
+
+<pl-graph>
+    digraph G {
+        rankdir=LR;  
+    
+        node [shape=circle, fontname="Helvetica", fontsize=18, width=0.5, fixedsize=true];
+        edge [fontname="Helvetica", fontsize=14];
+    
+        S -> A [label="7"];
+        S -> B [label="5"];
+        A -> C [label="4"];
+        A -> B [label="4"];
+        C -> T [label="6"];
+        B -> T [label="7"];
+    }
+    
+</pl-graph>
+
+<pl-question-panel>
+    <p>Consider pushing 4 units of flow through S → A → C → T. Draw the residual graph after this
+        push.</p>
+</pl-question-panel>
+
+<pl-graph-constructor directed="true"></pl-graph-constructor>
+
+  
+  
+  
+  
+  

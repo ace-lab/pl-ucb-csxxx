@@ -1,0 +1,39 @@
+<pl-question-panel>
+    <h2>Easy Level - Copy Graph</h2>
+
+    <p>Copy the graph below into <strong>PL Graph Constructor</strong> and press "Save & Grade"</p>
+        
+    <p>Refer to instructions under the canvas if needed</p>
+    
+    <!-- <img src="graph.png" alt="Graph Visualization" width="600"> -->
+
+    <pl-graph>
+        digraph {
+            rankdir=LR;
+    
+            node [shape=circle, fontname="Helvetica", fontsize=18, width=0.65, fixedsize=true];
+            edge [fontname="Helvetica", fontsize=14];
+    
+            // Define nodes
+            A; B; C; D;
+    
+            // Define edges with weights
+            A -> B [label="5"];
+            A -> C [label="3"];
+            B -> C [label="-1"];
+            B -> D [label="4"];
+            C -> D [label="2"];
+        }
+    </pl-graph>
+    
+</pl-question-panel>
+
+<pl-graph-constructor answers-name="graph_input2" directed="true"></pl-graph-constructor>
+
+  
+  
+  
+
+
+  
+  

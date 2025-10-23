@@ -1,0 +1,39 @@
+<pl-question-panel>
+    <h2>Strongly Connected Components (SCCs)</h2>
+
+    <p>A <strong>strongly connected component (SCC)</strong> is defined as a subset of vertices in which there exists a path from each vertex to another vertex.</p>
+        
+    <p>What are the SCCs of the above graph?</p>
+        
+    <p>Collapse each SCC you found into a meta-node, so that you end up with a graph of the SCC meta-nodes. Draw this graph below, and submit.</p>
+    
+</pl-question-panel>
+<pl-graph>digraph G {
+    rankdir=LR; 
+    node [shape=circle, fontname="Helvetica", fontsize=18, width=0.5, fixedsize=true];
+    edge [fontname="Helvetica", fontsize=14];
+
+    A -> B;
+    A -> C;
+    A -> E;
+    A -> H;
+    B -> G;
+    E -> I;
+    I -> G;
+    I -> H;
+    C -> D;
+    D -> F;
+    F -> H;
+    H -> J;
+    C -> J;
+}
+</pl-graph>
+<pl-graph-constructor directed="true"></pl-graph-constructor>
+
+  
+  
+  
+
+
+  
+  

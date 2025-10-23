@@ -1,0 +1,18 @@
+{
+    "uuid": "A4C7C4DF-9FF6-493E-BA61-7EB054B97B64",
+    "longName": "Graph Constructor",
+    "allowAccess": [
+        {
+            "institution": "LTI",
+            "startDate": "2023-10-23T00:00:01",
+            "endDate": "2024-06-01T23:59:59"
+        },
+        {
+            "institution": "Any",
+            "startDate": "2023-10-23T00:00:01",
+            "endDate": "2024-06-01T23:59:59",
+            "uids": [
+            ]
+        }
+    ]
+}

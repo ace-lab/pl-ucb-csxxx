@@ -1,0 +1,40 @@
+<pl-question-panel>
+    <h2>Medium Level - Copy Graph</h2>
+
+    <p>Copy the graph below into <strong>PL Graph Constructor</strong> and press "Save & Grade"</p>
+        
+    <p>Refer to instructions under the canvas if needed</p>
+    
+    <!-- <img src="graph.png" alt="Graph Visualization" width="600"> -->
+
+    <pl-graph>
+        digraph{
+    rankdir=LR; // Bottom to top layout to better mimic the triangular shape
+
+    node [shape=circle, fontname="Helvetica", fontsize=18, width=0.65, fixedsize=true];
+    edge [fontname="Helvetica", fontsize=14];
+
+    A; B; C; D; E; F;
+    A -> B [label="6"];
+    A -> C [label="2"];
+    B -> C [label="2"];
+    B -> D [label="-3"];
+    B -> E [label="2"];
+    C -> E [label="-2"];
+    C -> F [label="3"];
+    D -> E [label="-1"];
+    E -> F [label="4"];
+        }
+
+    </pl-graph>
+</pl-question-panel>
+
+<pl-graph-constructor answers-name="graph_input3" directed="true"></pl-graph-constructor>
+
+  
+  
+  
+
+
+  
+  
