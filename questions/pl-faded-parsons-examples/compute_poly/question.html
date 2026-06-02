@@ -1,0 +1,31 @@
+<pl-question-panel>
+  A polynomial function is a function with coefficients, variables and
+  constants. A polynomial function is said to be the nth degree polynomial
+  if there is a term in the function with the variable to the nth degree.
+  For example, a 4th degree polynomial must contain the term x^4 with some
+  coefficient multiplied to it.<br><br>
+
+  Write a function that takes a list of coefficients (from 0th to nth degree)
+  and a value <code>x</code>, and returns the polynomial computed at
+  <code>x</code>.<br><br>
+
+  Write this function using a <b>for</b> loop, not a <b>while</b> loop.<br><br>
+
+  <pl-code language="python">
+  >> poly([4], 2) # 4*(2**0)
+  4
+  >> poly([4, 5], 2) # 4*(2**0) + 5*(2**1)
+  14
+  >> poly([2,4,7], 6) # 2*(6**0) + 4*(6**1) + 7*(6**2)
+  276</pl-code>
+  
+</pl-question-panel>
+
+<pl-faded-parsons>
+  def poly(coeffs, x): #0given
+  total = !BLANK
+  for power, coeff in enumerate(coeffs):
+  !BLANK = total + coeff * (x ** power) 
+  return total #1given
+</pl-faded-parsons>
+
